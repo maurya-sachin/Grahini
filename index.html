@@ -5,56 +5,51 @@
     <title>Grahini</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Splash&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Palanquin&family=Splash&display=swap');
     </style>
+    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
 </head>
 
 <body>
 
-    <div class="preloader">
-
-        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
-            preserveAspectRatio="xMidYMid" class="lds-ripple" style="background:0 0">
-            <circle cx="50" cy="50" r="4.719" fill="none" stroke="#e2e2e2" stroke-width="2">
-                <animate attributeName="r" calcMode="spline" values="0;40" keyTimes="0;1" dur="3"
-                    keySplines="0 0.2 0.8 1" begin="-1.5s" repeatCount="indefinite" />
-                <animate attributeName="opacity" calcMode="spline" values="1;0" keyTimes="0;1" dur="3"
-                    keySplines="0.2 0 0.8 1" begin="-1.5s" repeatCount="indefinite" />
-            </circle>
-            <circle cx="50" cy="50" r="27.591" fill="none" stroke="#f0e68c" stroke-width="2">
-                <animate attributeName="r" calcMode="spline" values="0;40" keyTimes="0;1" dur="3"
-                    keySplines="0 0.2 0.8 1" begin="0s" repeatCount="indefinite" />
-                <animate attributeName="opacity" calcMode="spline" values="1;0" keyTimes="0;1" dur="3"
-                    keySplines="0.2 0 0.8 1" begin="0s" repeatCount="indefinite" />
-            </circle>
-        </svg>
+    <div class="preloader" id="preloader">
+        <video autoplay loop id="loaderVideo" playsinline muted>
+            <source src="/assets/images/Avocado.mp4" type="video/mp4">
+        </video>
     </div>
+    <div class="container">
 
-    <video autoplay loop poster="./assets/images/poster.jpg" id="bgVideo" playsinline muted>
-        <source src="/assets/images/background.mp4" type="video/mp4">
-    </video>
-    
-    <div class="intro">
-        <div class="viewport-header">
-            <h1>EXPLORE
-                <span>Grahini</span>
-            </h1>
+        <video autoplay loop poster="./assets/images/poster.jpg" id="bgVideo" playsinline muted>
+            <source src="/assets/images/background.mp4" type="video/mp4">
+        </video>
+
+        <div class="intro">
+            <div class="viewport-header">
+                <h1>EXPLORE
+                    <span>Grahini</span>
+                </h1>
+            </div>
+        </div>
+
+        <div class="main-content-container">
+            <div class="header">
+
+                <div class="logo">
+                    <img src="./assets/images/cutlery.png" alt="logo">
+                    <h1>
+                        Grahini
+                    </h1>
+                </div>
+                <div class="button">
+                    <button>Dine with Us</button>
+                </div>
+            </div>
+            <div class="main-content">
+                AVAsdkjfkbn
+            </div>
         </div>
 
     </div>
-
-    <main>
-        <header>
-            <h1>
-                Grahini
-            </h1>
-            <img src="./assets/images/cutlery.png" alt="logo">
-        </header>
-        <div class="main-content">
-            AVAsdkjfkbn
-        </div>
-    </main>
-
     <script src="./assets/js/script.js"></script>
 </body>
 
