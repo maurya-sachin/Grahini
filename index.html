@@ -2,14 +2,46 @@
 <html>
 
 <head>
-    <title>Product Catalog</title>
+    <title>Grahini</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Splash&display=swap');
+    </style>
 </head>
 
 <body>
-    <h1>Product Catalog</h1>
-    <div id="product-list"></div>
 
+    <div class="preloader">
+
+        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+            preserveAspectRatio="xMidYMid" class="lds-ripple" style="background:0 0">
+            <circle cx="50" cy="50" r="4.719" fill="none" stroke="#e2e2e2" stroke-width="2">
+                <animate attributeName="r" calcMode="spline" values="0;40" keyTimes="0;1" dur="3"
+                    keySplines="0 0.2 0.8 1" begin="-1.5s" repeatCount="indefinite" />
+                <animate attributeName="opacity" calcMode="spline" values="1;0" keyTimes="0;1" dur="3"
+                    keySplines="0.2 0 0.8 1" begin="-1.5s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="50" cy="50" r="27.591" fill="none" stroke="#f0e68c" stroke-width="2">
+                <animate attributeName="r" calcMode="spline" values="0;40" keyTimes="0;1" dur="3"
+                    keySplines="0 0.2 0.8 1" begin="0s" repeatCount="indefinite" />
+                <animate attributeName="opacity" calcMode="spline" values="1;0" keyTimes="0;1" dur="3"
+                    keySplines="0.2 0 0.8 1" begin="0s" repeatCount="indefinite" />
+            </circle>
+        </svg>
+    </div>
+
+    <video autoplay loop poster="./assets/images/poster.jpg" id="bgVideo" playsinline muted>
+        <source src="/assets/images/background.mp4" type="video/mp4">
+    </video>
+    
+    <div class="intro">
+        <div class="viewport-header">
+            <h1>EXPLORE
+                <span>Grahini</span>
+            </h1>
+        </div>
+
+    </div>
     <script src="./assets/js/script.js"></script>
 </body>
 
