@@ -1,12 +1,37 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: 'Lavishly Yours', cursive;
 }
 
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html,
 body {
+    height: 100%;
     width: 100%;
 }
 
-h1{
-    font-size: 40px;
+.preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: rgb(23, 22, 22);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    opacity: 1;
+    transition: opacity 0.3s linear;
+}
+
+.preloader.loaded {
+    opacity: 0;
+    pointer-events: none;
 }
