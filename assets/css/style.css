@@ -1,38 +1,41 @@
+/* Define custom font variables */
 :root {
-    /* font */
     --intro: 'Splash', cursive;
     --content1: 'Cormorant Garamond', serif;
     --content2: 'Palanquin', sans-serif;
-
 }
 
-
-
+/* Set box-sizing property for all elements */
 *,
 *::after,
 *::before {
     box-sizing: border-box;
 }
 
+/* Reset default margin, padding, and set default font */
 * {
     padding: 0;
     margin: 0;
-    font-family: var(--content1)
+    font-family: var(--content1);
 }
 
+/* Style the text selection */
 *::selection {
     background-color: #d1362b;
     color: #e2e2e2;
 }
 
+/* Set global styles for the HTML and body */
 html,
 body {
     height: 100%;
     width: 100%;
     overflow: hidden;
+    background-color: #d1362b;
     /* Hide scrollbar initially */
 }
 
+/* Style the custom scrollbar for WebKit browsers */
 ::-webkit-scrollbar {
     width: 8px;
     height: 10px;
@@ -47,8 +50,7 @@ body {
     background: rgba(0, 0, 0, 0.2);
 }
 
-
-/* PRELOADER */
+/* Style for the preloader section */
 .preloader {
     position: fixed;
     top: 0;
@@ -63,14 +65,14 @@ body {
     filter: brightness(97%);
 }
 
+/* Style for the preloader video */
 .preloader video#loaderVideo {
     object-fit: cover;
     width: 800px;
     height: 800px;
 }
 
-/* PRELOADER END */
-
+/* Styles for the container and its show state */
 .container {
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
@@ -80,7 +82,7 @@ body {
     opacity: 1;
 }
 
-
+/* Styles for the background video */
 video#bgVideo {
     width: 100vw;
     height: 100vh;
@@ -94,6 +96,7 @@ video#bgVideo {
     filter: brightness(80%);
 }
 
+/* Styles for the viewport header section */
 .viewport-header {
     height: 100vh;
     text-align: center;
@@ -104,6 +107,7 @@ video#bgVideo {
     width: 100%;
 }
 
+/* Styles for the heading in the viewport header */
 .viewport-header h1 {
     color: #f0e68c;
     text-transform: uppercase;
@@ -114,8 +118,8 @@ video#bgVideo {
     font-weight: 500;
 }
 
+/* Styles for the span within the heading in the viewport header */
 .viewport-header h1 span {
-
     color: #e2e2e2;
     display: block;
     font-size: 10vw;
@@ -123,14 +127,12 @@ video#bgVideo {
     font-family: var(--intro);
 }
 
-
-/* Intro END*/
-/* .main-content-container SECTION */
-
+/* Styles for the main content container section */
 .main-content-container {
     height: 100vh;
 }
 
+/* Styles for the header within the main content container */
 .main-content-container .header {
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, .2);
     background-color: rgba(245, 222, 179, 0.692);
@@ -138,12 +140,14 @@ video#bgVideo {
     position: sticky;
 }
 
+/* Styles for the logo within the header */
 .main-content-container .header .logo {
     width: 100%;
     padding: 20px 0;
     text-align: center;
 }
 
+/* Styles for the heading within the logo */
 .main-content-container .header .logo h1 {
     margin-top: -15px;
     color: whitesmoke;
@@ -155,6 +159,7 @@ video#bgVideo {
     filter: drop-shadow(5px 5px 5px #222222b7);
 }
 
+/* Styles for the image within the logo */
 .main-content-container .header .logo img {
     width: 60px;
     -webkit-filter: drop-shadow(5px 5px 5px #222222b7);
