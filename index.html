@@ -2,54 +2,86 @@
 <html>
 
 <head>
+    <!-- Set the title of the HTML document -->
     <title>Grahini</title>
+
+    <!-- Link the external stylesheet -->
     <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Import Google Fonts -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Palanquin&family=Splash&display=swap');
     </style>
+
+    <!-- Set the shortcut icon for the webpage -->
     <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
 </head>
 
 <body>
 
+    <!-- Preloader section -->
     <div class="preloader" id="preloader">
+        <!-- Video element for preloader with autoplay, loop, and muted attributes -->
         <video autoplay loop id="loaderVideo" playsinline muted>
+            <!-- Source of the video -->
             <source src="/assets/images/Avocado.mp4" type="video/mp4">
         </video>
     </div>
+
+    <!-- Main container for the webpage -->
     <div class="container">
 
+        <!-- Background video for the container -->
         <video autoplay loop poster="./assets/images/poster.jpg" id="bgVideo" playsinline muted>
+            <!-- Source of the background video -->
             <source src="/assets/images/background.mp4" type="video/mp4">
         </video>
 
+        <!-- Intro section with a viewport header -->
         <div class="intro">
             <div class="viewport-header">
+                <!-- Heading in the intro section -->
                 <h1>EXPLORE
+                    <!-- Span within the heading -->
                     <span>Grahini</span>
                 </h1>
             </div>
         </div>
 
+        <!-- Main content container section -->
         <div class="main-content-container">
+            <!-- Header within the main content container -->
             <div class="header">
 
+                <!-- Logo with an image and heading -->
                 <div class="logo">
                     <img src="./assets/images/cutlery.png" alt="logo">
                     <h1>
                         Grahini
                     </h1>
                 </div>
+
+                <!-- Button within the header -->
                 <div class="button">
                     <button>Dine with Us</button>
                 </div>
             </div>
+
+            <!-- Main content within the main content container -->
             <div class="main-content">
                 AVAsdkjfkbn
             </div>
         </div>
 
     </div>
+
+    <!-- Load GSAP library for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+
+    <!-- Load GSAP ScrollTrigger for scroll-based animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+
+    <!-- Load custom JavaScript file for additional scripting -->
     <script src="./assets/js/script.js"></script>
 </body>
 
