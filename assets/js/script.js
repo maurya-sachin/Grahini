@@ -26,8 +26,8 @@ let section = document.querySelector(".container"),
 
 // Setting initial properties with GSAP
 gsap.set(dot, {
-  width: "120vmax", // ensures it fills every part of the screen. 
-  height: "120vmax",
+  width: "140vmax", // ensures it fills every part of the screen. 
+  height: "140vmax",
   xPercent: -50, // center the dot in the section area
   yPercent: -50,
   top: "48%",
