@@ -1,8 +1,8 @@
 /* Define custom font variables */
 :root {
     --intro: 'Splash', cursive;
-    --content1: 'Cormorant Garamond', serif;
-    --content2: 'Palanquin', sans-serif;
+    --content1: 'Love Light', cursive;
+    --content2: 'Babylonica', cursive;
 }
 
 /* Set box-sizing property for all elements */
@@ -84,6 +84,7 @@ body {
 
 .container.show {
     opacity: 1;
+    width: 100%;
 }
 
 /* Styles for the background video */
@@ -178,43 +179,60 @@ video#bgVideo {
 
 /* Styles for the header within the main content container */
 .content-container .header {
-    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, .2);
-    background-color: rgba(245, 222, 179, 0.692);
+    box-shadow: 0 4px 2px -2px #7571455e;
+    background-color: #00000083;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     position: absolute;
+    padding-left: 2.8vw;
     top: 2%;
     width: 100%;
-    padding: 0 150px 0 180px;
+    column-gap: 37vw;
+}
+
+.content-container .header .menu {
+    /* margin-left: 2vw; */
 }
 
 .content-container .header .menu img {
-    width: 60px;
+    width: 4vw;
 }
 
 /* Styles for the logo within the header */
 .content-container .header .logo {
-    width: 100%;
-    padding: 20px 0;
+    padding: 5px 0;
     text-align: center;
 }
 
 /* Styles for the heading within the logo */
 .content-container .header .logo h1 {
     margin-top: -15px;
-    color: whitesmoke;
+    color: #f0e68c;
     font-weight: 500;
-    font-size: 40px;
-    font-family: var(--intro);
-    text-transform: uppercase;
-    -webkit-filter: drop-shadow(5px 5px 5px #222222b7);
-    filter: drop-shadow(5px 5px 5px #222222b7);
+    font-size: 3.5vw;
+    font-family: var(--content2);
+    -webkit-filter: drop-shadow(5px 5px 5px #79797983);
+    filter: drop-shadow(5px 5px 5px #80808083);
 }
 
 /* Styles for the image within the logo */
 .content-container .header .logo img {
-    width: 60px;
-    -webkit-filter: drop-shadow(5px 5px 5px #222222b7);
-    filter: drop-shadow(5px 5px 5px #222222b7);
+    width: 3vw;
+    -webkit-filter: drop-shadow(5px 5px 5px #83838383);
+    filter: drop-shadow(5px 5px 5px #8f8f8f83);
+}
+
+.content-container .header .button {
+    /* margin-right: 2vw; */
+}
+
+.content-container .header .button button {
+    background-color: transparent;
+    color: #f0e68c;
+    font-weight: 500;
+    border-radius: 12px;
+    border: 1px solid #e2e2e2;
+    padding: .5vw 1vw;
+    font-size: 1.5vw;
 }
