@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuButton = document.querySelector('.menu');
   const sidebar = document.querySelector('.sidebar');
 
+  let isHeaderVisible = false;
+
   // Add a scroll event listener to the window
   window.addEventListener('scroll', function () {
     // Get the current scroll position
@@ -37,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (scrollPosition >= contentContainerOffset) {
       // If true, add the 'visible' class to the header
       header.classList.add('visible');
+      isHeaderVisible = true;
 
       // Animate the header with GSAP
       gsap.to(header, {
@@ -45,12 +48,10 @@ document.addEventListener("DOMContentLoaded", function () {
         scale: 1,
         ease: "power2.out"
       });
-
-      // Show the sidebar
-      gsap.to(sidebar, { width: 300, ease: 'power2.out', duration: 0.5 });
     } else {
       // If false, remove the 'visible' class from the header
       header.classList.remove('visible');
+      isHeaderVisible = false;
 
       // Animate the header to hide with GSAP
       gsap.to(header, {
@@ -59,25 +60,21 @@ document.addEventListener("DOMContentLoaded", function () {
         scale: 0.8,
         ease: "power2.out"
       });
-
-      // Hide the sidebar
-      gsap.to(sidebar, { width: 0, ease: 'power2.out', duration: 0.5 });
     }
   });
 
   // Function to toggle the sidebar
   function toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    const content = document.querySelector('.content-container');
-    const menuButton = document.querySelector('.menu');
+    if (isHeaderVisible) {
+      const content = document.querySelector('.content-container');
+      menuButton.classList.toggle('active');
 
-    menuButton.classList.toggle('active');
+      // Toggle sidebar width between 300px and 0px
+      const newWidth = sidebar.offsetWidth === 0 ? 300 : 0;
 
-    // Toggle sidebar width between 300px and 0px
-    const newWidth = sidebar.offsetWidth === 0 ? 300 : 0;
-
-    gsap.to(sidebar, { width: newWidth, ease: 'power2.out' });
-    gsap.to(content, { marginLeft: newWidth, ease: 'power2.out' });
+      gsap.to(sidebar, { width: newWidth, ease: 'power2.out' });
+      gsap.to(content, { marginLeft: newWidth, ease: 'power2.out' });
+    }
   }
 
   // Add a click event listener to the menu button

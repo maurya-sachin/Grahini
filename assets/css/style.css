@@ -161,12 +161,12 @@ video#bgVideo {
     cursor: pointer;
     background: none;
     border: none;
-    transform: translateX(160px);
+    transform: translateX(0);
     transition: transform 1.7s ease;
 }
 
 .header .menu.active {
-    transform: translateX(0px);
+    transform: translateX(160px);
 }
 
 
