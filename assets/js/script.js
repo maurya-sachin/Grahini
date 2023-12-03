@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Get the content-container element
   let contentContainer = document.querySelector('.content-container');
 
+  const menuButton = document.querySelector('.menu');
+  const sidebar = document.querySelector('.sidebar');
+
   // Add a scroll event listener to the window
   window.addEventListener('scroll', function () {
     // Get the current scroll position
@@ -42,6 +45,9 @@ document.addEventListener("DOMContentLoaded", function () {
         scale: 1,
         ease: "power2.out"
       });
+
+      // Show the sidebar
+      gsap.to(sidebar, { width: 300, ease: 'power2.out', duration: 0.5 });
     } else {
       // If false, remove the 'visible' class from the header
       header.classList.remove('visible');
@@ -53,10 +59,34 @@ document.addEventListener("DOMContentLoaded", function () {
         scale: 0.8,
         ease: "power2.out"
       });
+
+      // Hide the sidebar
+      gsap.to(sidebar, { width: 0, ease: 'power2.out', duration: 0.5 });
     }
   });
 
+  // Function to toggle the sidebar
+  function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    const content = document.querySelector('.content-container');
+    const menuButton = document.querySelector('.menu');
+
+    menuButton.classList.toggle('active');
+
+    // Toggle sidebar width between 300px and 0px
+    const newWidth = sidebar.offsetWidth === 0 ? 300 : 0;
+
+    gsap.to(sidebar, { width: newWidth, ease: 'power2.out' });
+    gsap.to(content, { marginLeft: newWidth, ease: 'power2.out' });
+  }
+
+  // Add a click event listener to the menu button
+  menuButton.addEventListener('click', toggleSidebar);
+
+
 });
+
+
 
 
 
