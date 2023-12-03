@@ -14,4 +14,76 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add a class to trigger the scale and opacity animation on the intro section
     intro.classList.add("animate-intro");
   }, 3000);
+
+
+  // Get the header element
+  let header = document.querySelector('.header');
+
+  // Get the content-container element
+  let contentContainer = document.querySelector('.content-container');
+
+  // Add a scroll event listener to the window
+  window.addEventListener('scroll', function () {
+    // Get the current scroll position
+    let scrollPosition = window.scrollY || window.pageYOffset;
+
+    // Get the offset of the content-container from the top of the document
+    let contentContainerOffset = contentContainer.offsetTop;
+
+    // Check if the scroll position is greater than or equal to the content-container offset
+    if (scrollPosition >= contentContainerOffset) {
+      // If true, add the 'visible' class to the header
+      header.classList.add('visible');
+
+      // Animate the header with GSAP
+      gsap.to(header, {
+        duration: 0.5,
+        y: 0,
+        scale: 1,
+        ease: "power2.out"
+      });
+    } else {
+      // If false, remove the 'visible' class from the header
+      header.classList.remove('visible');
+
+      // Animate the header to hide with GSAP
+      gsap.to(header, {
+        duration: 0.5,
+        y: -20,
+        scale: 0.8,
+        ease: "power2.out"
+      });
+    }
+  });
+
 });
+
+
+
+const horizontalSections = gsap.utils.toArray('section.horizontal')
+
+horizontalSections.forEach(function (sec, i) {
+
+  var thisPinWrap = sec.querySelector('.pin-wrap');
+  var thisAnimWrap = thisPinWrap.querySelector('.animation-wrap');
+
+  var getToValue = () => -(thisAnimWrap.scrollWidth - window.innerWidth);
+
+  gsap.fromTo(thisAnimWrap, {
+    x: () => thisAnimWrap.classList.contains('to-right') ? 0 : getToValue()
+  }, {
+    x: () => thisAnimWrap.classList.contains('to-right') ? getToValue() : 0,
+    ease: "none",
+    scrollTrigger: {
+      trigger: sec,
+      start: "top top+=100",
+      end: () => "+=" + (thisAnimWrap.scrollWidth - window.innerWidth),
+      pin: thisPinWrap,
+      invalidateOnRefresh: true,
+      //anticipatePin: 1,
+      scrub: true,
+      //markers: true,
+    }
+  });
+
+});	

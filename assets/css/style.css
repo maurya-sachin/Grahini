@@ -35,21 +35,6 @@ body {
     /* Hide scrollbar initially */
 }
 
-/* Style the custom scrollbar for WebKit browsers */
-::-webkit-scrollbar {
-    width: 8px;
-    height: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.219);
-    border-radius: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.2);
-}
-
 /* Style for the preloader section */
 .preloader {
     position: fixed;
@@ -75,9 +60,6 @@ body {
 /* Styles for the container and its show state */
 .container {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
 }
@@ -152,4 +134,188 @@ video#bgVideo {
     font-size: 10vw;
     letter-spacing: -1.3vw;
     font-family: var(--intro);
+}
+
+
+/* Styles for the header within the main content container */
+.header {
+    box-shadow: 0 4px 2px -2px #7571455e;
+    background-color: #0000004d;
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    column-gap: 37vw;
+    opacity: 0;
+}
+
+.header.visible {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.header .menu {
+    margin-left: 2vw;
+}
+
+
+/* Styles for the logo within the header */
+.header .logo {
+    padding: 5px 0;
+    text-align: center;
+}
+
+/* Styles for the heading within the logo */
+.header .logo h1 {
+    margin-top: -15px;
+    color: #f0e68c;
+    font-weight: 500;
+    font-size: 3.5vw;
+    font-family: var(--content2);
+    -webkit-filter: drop-shadow(5px 5px 5px #79797983);
+    filter: drop-shadow(5px 5px 5px #80808083);
+}
+
+/* Styles for the image within the logo */
+.header .logo img {
+    width: 3vw;
+    -webkit-filter: drop-shadow(5px 5px 5px #83838383);
+    filter: drop-shadow(5px 5px 5px #8f8f8f83);
+}
+
+.header .button button {
+    background-color: transparent;
+    color: #beb55f;
+    font-weight: 500;
+    border-radius: 12px;
+    border: 1px solid #e2e2e2;
+    padding: .5vw 1vw;
+    font-size: 1.5vw;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Signika+Negative:300,400&display=swap');
+
+.container,
+.content-container,
+section.horizontal {
+    overflow-x: hidden;
+}
+
+.content-container {
+    font-family: "Signika Negative", sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(109.6deg, rgba(0, 0, 0, 1) 11.2%, rgba(11, 132, 145, 1) 91.1%);
+}
+
+section h1 {
+    margin: 0;
+    padding: 50px 0 0 50px;
+}
+
+section p {
+    margin: 0;
+    padding: 50px 0 50px 50px;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    color: #e2e2e2;
+}
+
+
+section:nth-of-type(odd) {
+    /* background-color: #f0f0f0; */
+}
+
+section:nth-of-type(even) {
+    /* background-color: #ffffff; */
+}
+
+
+
+
+
+
+
+
+section.horizontal {
+    overflow-x: hidden;
+}
+
+section.horizontal .pin-wrap,
+section.horizontal .animation-wrap {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+}
+
+
+section.horizontal .item {
+    position: relative;
+    padding: 150px 80px;
+    flex: 0 0 500px;
+    height: calc(100vh - 300px);
+    display: flex;
+    align-items: center;
+    line-height: 1.7;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
+    background-color: transparent;
+}
+
+section.horizontal .item:before {
+    position: absolute;
+    font-size: 100px;
+    opacity: .13;
+    font-weight: bold;
+    z-index: -1;
+    -webkit-transform: translate(-30px, -50px);
+    transform: translate(-30px, -50px);
+    line-height: 1;
+}
+
+
+
+
+section.horizontal .animation-wrap.to-right {
+    counter-reset: item;
+    float: left;
+}
+
+section.horizontal .animation-wrap.to-left {
+    counter-reset: item 11;
+    float: right;
+}
+
+section.horizontal .animation-wrap.to-right .item:before {
+    counter-increment: item;
+    content: counter(item);
+}
+
+section.horizontal .animation-wrap.to-left .item:before {
+    counter-increment: item -1;
+    content: counter(item);
+}
+
+
+
+section.horizontal .animation-wrap .item:nth-child(2n+2) {
+    align-items: flex-start;
+}
+
+section.horizontal .animation-wrap .item:nth-child(4n+4) {
+    align-items: flex-end;
 }
