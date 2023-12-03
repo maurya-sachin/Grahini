@@ -87,6 +87,67 @@ body {
     width: 100%;
 }
 
+/* Styles for the header within the main content container */
+.container .header {
+    box-shadow: 0 4px 2px -2px #7571455e;
+    background-color: #00000083;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding-left: 2.8vw;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    column-gap: 37vw;
+}
+
+.container .header .menu {
+    /* margin-left: 2vw; */
+}
+
+.container .header .menu img {
+    width: 4vw;
+}
+
+/* Styles for the logo within the header */
+.container .header .logo {
+    padding: 5px 0;
+    text-align: center;
+}
+
+/* Styles for the heading within the logo */
+.container .header .logo h1 {
+    margin-top: -15px;
+    color: #f0e68c;
+    font-weight: 500;
+    font-size: 3.5vw;
+    font-family: var(--content2);
+    -webkit-filter: drop-shadow(5px 5px 5px #79797983);
+    filter: drop-shadow(5px 5px 5px #80808083);
+}
+
+/* Styles for the image within the logo */
+.container .header .logo img {
+    width: 3vw;
+    -webkit-filter: drop-shadow(5px 5px 5px #83838383);
+    filter: drop-shadow(5px 5px 5px #8f8f8f83);
+}
+
+.container .header .button {
+    /* margin-right: 2vw; */
+}
+
+.container .header .button button {
+    background-color: transparent;
+    color: #beb55f;
+    font-weight: 500;
+    border-radius: 12px;
+    border: 1px solid #e2e2e2;
+    padding: .5vw 1vw;
+    font-size: 1.5vw;
+}
+
 /* Styles for the background video */
 video#bgVideo {
     width: 100vw;
@@ -175,64 +236,4 @@ video#bgVideo {
     justify-content: center;
     align-items: center;
     position: relative;
-}
-
-/* Styles for the header within the main content container */
-.content-container .header {
-    box-shadow: 0 4px 2px -2px #7571455e;
-    background-color: #00000083;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    padding-left: 2.8vw;
-    top: 2%;
-    width: 100%;
-    column-gap: 37vw;
-}
-
-.content-container .header .menu {
-    /* margin-left: 2vw; */
-}
-
-.content-container .header .menu img {
-    width: 4vw;
-}
-
-/* Styles for the logo within the header */
-.content-container .header .logo {
-    padding: 5px 0;
-    text-align: center;
-}
-
-/* Styles for the heading within the logo */
-.content-container .header .logo h1 {
-    margin-top: -15px;
-    color: #f0e68c;
-    font-weight: 500;
-    font-size: 3.5vw;
-    font-family: var(--content2);
-    -webkit-filter: drop-shadow(5px 5px 5px #79797983);
-    filter: drop-shadow(5px 5px 5px #80808083);
-}
-
-/* Styles for the image within the logo */
-.content-container .header .logo img {
-    width: 3vw;
-    -webkit-filter: drop-shadow(5px 5px 5px #83838383);
-    filter: drop-shadow(5px 5px 5px #8f8f8f83);
-}
-
-.content-container .header .button {
-    /* margin-right: 2vw; */
-}
-
-.content-container .header .button button {
-    background-color: transparent;
-    color: #beb55f;
-    font-weight: 500;
-    border-radius: 12px;
-    border: 1px solid #e2e2e2;
-    padding: .5vw 1vw;
-    font-size: 1.5vw;
 }

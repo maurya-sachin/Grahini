@@ -21,7 +21,7 @@ let section = document.querySelector(".container"),
   title = document.querySelector(".intro"),
   mark = title.querySelector("strong"),
   dot = document.querySelector(".content-container"),
-  header = document.querySelector(".content-container .header"),
+  header = document.querySelector(".container .header"),
   bgVideo = document.getElementById("bgVideo");
 
 // Setting initial properties with GSAP
