@@ -184,6 +184,7 @@ video#bgVideo {
     width: 100%;
     column-gap: 37vw;
     opacity: 0;
+    backdrop-filter: blur(25px);
 }
 
 .header.visible {
@@ -247,21 +248,22 @@ video#bgVideo {
     top: 0;
     padding-top: 10vw;
     width: 0px;
-    transition: width 0.5s ease;
+    transition: all 0.5s ease;
     overflow: hidden;
     backdrop-filter: blur(25px);
+    box-shadow: 4px 0 2px -2px #7571455e;
+    opacity: 0;
 }
 
 .sidebar a {
+    margin: 0 2vw;
     padding: 1vw 2vw;
     text-decoration: none;
     display: block;
     text-align: center;
     color: #F0E68C;
+    border-bottom: 1px solid #f7cf68a6;
 }
-
-
-@import url('https://fonts.googleapis.com/css?family=Signika+Negative:300,400&display=swap');
 
 main {
     background-image: linear-gradient(109.6deg, rgba(0, 0, 0, 1) 11.2%, rgba(11, 132, 145, 1) 91.1%);

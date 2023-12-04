@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  
+
 
   // Get the header element
   let header = document.querySelector('.header');
@@ -85,6 +85,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Add a click event listener to the menu button
   menuButton.addEventListener('click', toggleSidebar);
+
+
+  let footer = document.querySelector('footer');
+  let isContentVisible = false;
+
+  window.addEventListener('scroll', function () {
+    let scrollPosition = window.scrollY || window.pageYOffset;
+    let contentContainerOffset = contentContainer.offsetTop;
+    let footerOffset = footer.offsetTop;
+
+    // Check if the scroll position is greater than or equal to the content-container offset
+    if (scrollPosition >= contentContainerOffset) {
+      isContentVisible = true;
+    } else {
+      isContentVisible = false;
+    }
+
+    // Adjust the sidebar opacity based on content visibility
+    gsap.to(sidebar, {
+      duration: 0.5,
+      opacity: isContentVisible ? 1 : 0,
+      ease: "power2.out"
+    });
+
+
+    // Check if the sidebar enters the footer section
+    if (scrollPosition + sidebar.offsetHeight >= footerOffset) {
+      // Change the color of the a tags inside the sidebar
+      gsap.to('.sidebar a', {
+        color: '#000000',
+        borderColor: '#000',
+        duration: 0.5,
+        ease: 'power2.out'
+      });
+    } else {
+      // Reset the color if not in the footer section
+      gsap.to('.sidebar a', {
+        color: '#fff',
+        borderColor: '#fff',
+        duration: 0.5,
+        ease: 'power2.out'
+      });
+    }
+  });
 
 
 });
