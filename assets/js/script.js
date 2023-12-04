@@ -109,25 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
       ease: "power2.out"
     });
 
-
-    // Check if the sidebar enters the footer section
-    if (scrollPosition + sidebar.offsetHeight >= footerOffset) {
-      // Change the color of the a tags inside the sidebar
-      gsap.to('.sidebar a', {
-        color: '#000000',
-        borderColor: '#000',
-        duration: 0.5,
-        ease: 'power2.out'
-      });
-    } else {
-      // Reset the color if not in the footer section
-      gsap.to('.sidebar a', {
-        color: '#fff',
-        borderColor: '#fff',
-        duration: 0.5,
-        ease: 'power2.out'
-      });
-    }
   });
 
 
@@ -173,3 +154,23 @@ function goToTop() {
     behavior: 'smooth'
   });
 }
+
+
+
+// Function to open the modal
+function openModal() {
+  document.getElementById('disclaimerModal').style.display = 'block';
+}
+
+// Function to close the modal
+function closeModal() {
+  document.getElementById('disclaimerModal').style.display = 'none';
+}
+
+// Optional: Close the modal if the user clicks outside of it
+window.onclick = function (event) {
+  var modal = document.getElementById('disclaimerModal');
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+};
