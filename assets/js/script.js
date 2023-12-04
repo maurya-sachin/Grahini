@@ -121,10 +121,10 @@ const horizontalSections = gsap.utils.toArray('section.horizontal')
 
 horizontalSections.forEach(function (sec, i) {
 
-  var thisPinWrap = sec.querySelector('.pin-wrap');
-  var thisAnimWrap = thisPinWrap.querySelector('.animation-wrap');
+  let thisPinWrap = sec.querySelector('.pin-wrap');
+  let thisAnimWrap = thisPinWrap.querySelector('.animation-wrap');
 
-  var getToValue = () => -(thisAnimWrap.scrollWidth - window.innerWidth);
+  let getToValue = () => -(thisAnimWrap.scrollWidth - window.innerWidth);
 
   gsap.fromTo(thisAnimWrap, {
     x: () => thisAnimWrap.classList.contains('to-right') ? 0 : getToValue()
@@ -169,8 +169,16 @@ function closeModal() {
 
 // Optional: Close the modal if the user clicks outside of it
 window.onclick = function (event) {
-  var modal = document.getElementById('disclaimerModal');
+  let modal = document.getElementById('disclaimerModal');
   if (event.target === modal) {
     modal.style.display = 'none';
   }
 };
+
+
+
+// Add an event listener to the window for the 'beforeunload' event
+window.addEventListener('beforeunload', function () {
+  // Scroll to the top of the page
+  window.scrollTo(0, 0);
+});
