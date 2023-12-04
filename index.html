@@ -12,7 +12,7 @@
 
 	<!-- Import Google Fonts -->
 	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Babylonica&family=Love+Light&family=Splash&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Babylonica&family=Love+Light&family=Playfair+Display&family=Splash&display=swap');
 	</style>
 
 	<!-- Set the shortcut icon for the webpage -->
@@ -897,26 +897,82 @@ z" />
 		<div class="footer-container">
 
 			<div class="footer-top">
-				<div class="logo">
-					<h1>
-						Grahini
-					</h1>
-					<img src="./assets/images/cutlery.png" alt="logo">
-				</div>
+				<a href="#">
+					<div class="logo">
+						<h1>
+							Grahini
+						</h1>
+						<img src="./assets/images/cutlery.png" alt="logo">
+					</div>
+				</a>
 				<button onclick="goToTop()"><span>&uarr;</span></button>
 			</div>
 
-			<div class=" footer-bottom">
+			<div class="footer-center">
 				<div class="items">
-					<div class="item"></div>
-					<div class="item"></div>
-					<div class="item"></div>
+					<h1>Let's Dig In</h1>
 				</div>
 
-				<div class="circles">
-					<div class="circle"></div>
+				<div class="arrow">
+					<h1>&#8599;</h1>
 				</div>
 
+				<div class="address">
+					<div class="location">
+						<img src="./assets/images/location.png" alt="location">
+						<p>xyz, Abc,<br>
+							123- XYZ.</p>
+					</div>
+					<div class="contact">
+						<img src="./assets/images/telephone-call.png" alt="contact">
+						<p>+91 1234567890</p>
+					</div>
+					<div class="social">
+						<a href="https://www.facebook.com/"><img src="./assets/images/facebook.png" alt="facebook"></a>
+						<a href="https://twitter.com/login"><img src="./assets/images/twitter.png" alt="twitter"></a>
+						<a href="https://wa.me/911234567890" target="_blank"><img src="./assets/images/whatsapp.png"
+								alt="whatsapp"></a>
+						<a href="https://in.linkedin.com/"><img src="./assets/images/linkedin.png" alt="linkedin"></a>
+
+					</div>
+				</div>
+
+			</div>
+
+			<div class="footer-bottom">
+				<h1>Disclaimer</h1>
+				<p>By using our website, you agree to this <span onclick="openModal()">disclaimer</span>.</p>
+				<div class="modal" id="disclaimerModal">
+					<div class="modal-content">
+						<span class="close" onclick="closeModal()">&times;</span>
+						<h2>Disclaimer</h2>
+						<p>
+							1. Product Information: Details on our website, including ingredients and allergen info, are
+							for general information. Check packaging for updates.
+							<br>
+							2. Accuracy: We aim for accuracy, but discrepancies may occur. Review product details,
+							especially if you have dietary restrictions.
+							<br>
+							3. Allergen Warning: Products may contain allergens. Check packaging for the latest allergen
+							information.
+							<br>
+							4. Availability: Product availability may change. We strive to update inventory but some
+							items may be temporarily out of stock.
+							<br>
+							5. Pricing: Prices and promotions are subject to change. The prices at checkout prevail.
+							<br>
+							6. Order Confirmation: An email confirmation doesn't guarantee product availability. We'll
+							contact you if issues arise.
+							<br>
+							7. Delivery: Timelines may vary due to unforeseen circumstances.
+							<br>
+							8. Returns and Refunds: Our <a href="#" target="_blank">Terms of Service</a> detail our
+							return and refund policy.
+							<br><br>
+							By using our website, you agree to this disclaimer.
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</footer>
