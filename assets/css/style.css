@@ -30,6 +30,7 @@ html,
 body {
     height: 100%;
     width: 100%;
+    position: relative;
     /* overflow: hidden; */
     /* background-color: #d1362b; */
     /* Hide scrollbar initially */
@@ -53,9 +54,44 @@ body {
 /* Style for the preloader video */
 .preloader video#loaderVideo {
     object-fit: cover;
-    width: 800px;
-    height: 800px;
+    width: 600px;
+    height: 600px;
 }
+
+.preloader .preloader-content h1 {
+    text-align: center;
+}
+
+.preloader .preloader-content h1 span {
+    font-size: 60px;
+    opacity: 0;
+    display: inline-block;
+}
+
+.preloader .preloader-content h1 span:nth-child(1) {
+    animation: blink 1s infinite alternate 0.3s;
+}
+
+.preloader .preloader-content h1 span:nth-child(2) {
+    animation: blink 1s infinite alternate 0.6s;
+}
+
+.preloader .preloader-content h1 span:nth-child(3) {
+    animation: blink 1s infinite alternate 0.9s;
+}
+
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
 
 /* Styles for the container and its show state */
 .container {
@@ -162,7 +198,7 @@ video#bgVideo {
     background: none;
     border: none;
     transform: translateX(0);
-    transition: transform 1.7s ease;
+    transition: transform 1s ease;
 }
 
 .header .menu.active {
@@ -221,7 +257,7 @@ video#bgVideo {
     text-decoration: none;
     display: block;
     text-align: center;
-    color: #fff;
+    color: #F0E68C;
 }
 
 
@@ -239,7 +275,6 @@ section.horizontal {
 }
 
 .content-container {
-    font-family: "Signika Negative", sans-serif;
     font-weight: 300;
     padding: 20px;
     transition: margin-left 0.5s ease;
@@ -263,22 +298,6 @@ section {
     position: relative;
     color: #e2e2e2;
 }
-
-
-section:nth-of-type(odd) {
-    /* background-color: #f0f0f0; */
-}
-
-section:nth-of-type(even) {
-    /* background-color: #ffffff; */
-}
-
-
-
-
-
-
-
 
 section.horizontal {
     overflow-x: hidden;
@@ -351,4 +370,76 @@ section.horizontal .animation-wrap .item:nth-child(2n+2) {
 
 section.horizontal .animation-wrap .item:nth-child(4n+4) {
     align-items: flex-end;
+}
+
+
+/*  footer section */
+footer {
+    height: 75vh;
+    width: 100%;
+    background-color: #16FFBD;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    overflow: hidden;
+    color: black;
+}
+
+.footer-top {
+    padding: 2vw 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.185);
+}
+
+.footer-top .logo {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+/* Styles for the footer within the logo */
+.footer-top .logo h1 {
+    margin-top: -15px;
+    font-weight: 500;
+    font-size: 2.5vw;
+    font-family: var(--content2);
+    -webkit-filter: drop-shadow(5px 5px 5px #79797983);
+    filter: drop-shadow(5px 5px 5px #80808083);
+}
+
+/* Styles for the image within the logo */
+.footer-top .logo img {
+    width: 2vw;
+    -webkit-filter: drop-shadow(5px 5px 5px #83838383);
+    filter: drop-shadow(5px 5px 5px #8f8f8f83);
+}
+
+.footer-top button {
+    border-radius: 50%;
+    height: 3.5vw;
+    width: 3.5vw;
+    border: none;
+    background-color: #ffffff50;
+    font-size: 3vw;
+    font-weight: 900;
+    transition: border .3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-top button:hover {
+    border: 2px solid #F7CE68;
+    color: #000000;
+}
+
+.footer-top button:hover span {
+    display: none;
+}
+
+.footer-top button:hover:before {
+    content: "Top";
+    font-weight: 500;
+    letter-spacing: 3px;
+    font-size: 1.8vw;
 }

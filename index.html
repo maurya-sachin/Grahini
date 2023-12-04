@@ -2,47 +2,50 @@
 <html>
 
 <head>
-    <!-- Set the title of the HTML document -->
-    <title>Grahini</title>
+	<!-- Set the title of the HTML document -->
+	<title>Grahini</title>
 
-    <!-- Link the external stylesheet -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+	<!-- Link the external stylesheet -->
+	<link rel="stylesheet" href="./assets/css/style.css">
 
-    <link rel="stylesheet" href="/assets/css/responsive.css">
+	<link rel="stylesheet" href="/assets/css/responsive.css">
 
-    <!-- Import Google Fonts -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Babylonica&family=Love+Light&family=Splash&display=swap');
-    </style>
+	<!-- Import Google Fonts -->
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Babylonica&family=Love+Light&family=Splash&display=swap');
+	</style>
 
-    <!-- Set the shortcut icon for the webpage -->
-    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+	<!-- Set the shortcut icon for the webpage -->
+	<link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
 
-    <!-- Load GSAP library for animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+	<!-- Load GSAP library for animations -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
 
-    <!-- Load GSAP ScrollTrigger for scroll-based animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+	<!-- Load GSAP ScrollTrigger for scroll-based animations -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
 
-    <!-- Preloader section -->
-    <div class="preloader" id="preloader">
-        <!-- Video element for preloader with autoplay, loop, and muted attributes -->
-        <video autoplay loop id="loaderVideo" playsinline muted>
-            <!-- Source of the video -->
-            <source src="/assets/images/Avocado.mp4" type="video/mp4">
-        </video>
-    </div>
+	<!-- Preloader section -->
+	<div class="preloader" id="preloader">
+		<div class="preloader-content">
+			<!-- Video element for preloader with autoplay, loop, and muted attributes -->
+			<video autoplay loop id="loaderVideo" playsinline muted>
+				<!-- Source of the video -->
+				<source src="/assets/images/Avocado.mp4" type="video/mp4">
+			</video>
+			<h1>Loading<span>.</span><span>.</span><span>.</span></h1>
+		</div>
+	</div>
 
-    <!-- Header within the main content container -->
-    <div class="header">
-        <button class="menu" onclick="toggleSidebar()">
-            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="4vw" viewBox="0 0 512 512"
-                enable-background="new 0 0 512 512" xml:space="preserve">
-                <path fill="#010000" opacity="1.000000" stroke="none" d="
+	<!-- Header within the main content container -->
+	<div class="header">
+		<button class="menu" onclick="toggleSidebar()">
+			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="4vw" viewBox="0 0 512 512"
+				enable-background="new 0 0 512 512" xml:space="preserve">
+				<path fill="#010000" opacity="1.000000" stroke="none" d="
 M459.000000,513.000000 
 	C335.310699,513.000000 211.621384,513.000000 87.362785,512.643433 
 	C79.891472,510.347687 75.450966,505.696838 74.138130,498.878296 
@@ -125,7 +128,7 @@ M62.126148,449.291962
 	C73.487442,458.904205 73.487442,453.517639 73.487442,447.470306 
 	C69.657074,447.986694 66.247849,448.446289 62.126148,449.291962 
 z" />
-                <path fill="#FFFFFF" opacity="0.000000" stroke="none" d="
+				<path fill="#FFFFFF" opacity="0.000000" stroke="none" d="
 M86.531342,1.000000 
 	C71.912498,7.279910 72.342018,20.373350 73.180977,34.073383 
 	C62.923264,33.203838 53.773464,34.433926 47.242565,43.163738 
@@ -159,7 +162,7 @@ M86.531342,1.000000
 	C1.058505,342.333313 1.058505,171.666656 1.058505,1.000000 
 	C29.432234,1.000000 57.747459,1.000000 86.531342,1.000000 
 z" />
-                <path fill="#FFFFFF" opacity="0.000000" stroke="none" d="
+				<path fill="#FFFFFF" opacity="0.000000" stroke="none" d="
 M459.468658,513.000000 
 	C464.616180,509.765350 469.980438,506.299896 471.270721,499.221405 
 	C471.558441,497.642883 471.970490,496.048615 471.970795,494.461548 
@@ -169,7 +172,7 @@ M459.468658,513.000000
 	C512.949951,171.666672 512.949951,342.333344 512.949951,513.000000 
 	C495.245667,513.000000 477.591492,513.000000 459.468658,513.000000 
 z" />
-                <path fill="#f0e68c" opacity="1.000000" stroke="none" d="
+				<path fill="#f0e68c" opacity="1.000000" stroke="none" d="
 M405.964600,497.684937 
 	C404.137299,497.753021 402.309998,497.880493 400.482697,497.880676 
 	C299.527649,497.890228 198.572571,497.889465 97.617508,497.888489 
@@ -297,7 +300,7 @@ M221.879059,359.501099
 	C223.049881,339.850616 221.756271,341.759674 221.850037,345.023132 
 	C221.979034,349.512665 221.880234,354.008789 221.879059,359.501099 
 z" />
-                <path fill="#D18131" opacity="1.000000" stroke="none" d="
+				<path fill="#D18131" opacity="1.000000" stroke="none" d="
 M406.428680,497.769836 
 	C405.977081,478.387024 406.002167,459.089050 405.976624,439.791199 
 	C405.974701,438.333862 405.611969,436.876984 405.156708,434.788605 
@@ -318,7 +321,7 @@ M406.428680,497.769836
 	C456.742737,497.374512 456.212677,497.900085 447.369843,497.894897 
 	C433.877472,497.886993 420.385132,497.868652 406.428680,497.769836 
 z" />
-                <path fill="#CFCDCB" opacity="1.000000" stroke="none" d="
+				<path fill="#CFCDCB" opacity="1.000000" stroke="none" d="
 M73.833694,218.908737 
 	C73.833687,221.198944 73.833687,223.020279 73.833687,224.779572 
 	C67.808235,226.603424 62.515015,225.625870 60.026802,222.219330 
@@ -326,14 +329,14 @@ M73.833694,218.908737
 	C62.879650,207.402313 68.286682,208.857941 73.833710,208.905411 
 	C73.833710,212.238495 73.833710,215.339172 73.833694,218.908737 
 z" />
-                <path fill="#CFCDCB" opacity="1.000000" stroke="none" d="
+				<path fill="#CFCDCB" opacity="1.000000" stroke="none" d="
 M60.858494,290.795990 
 	C65.027855,289.525238 68.914894,288.516266 73.455475,287.337677 
 	C73.455475,293.985718 73.455475,299.367737 73.455475,305.038544 
 	C68.588684,305.150848 63.409607,306.636200 59.848152,301.590240 
 	C57.278217,297.949036 57.901276,294.401184 60.858494,290.795990 
 z" />
-                <path fill="#CFCDCB" opacity="1.000000" stroke="none" d="
+				<path fill="#CFCDCB" opacity="1.000000" stroke="none" d="
 M73.784760,130.378418 
 	C73.821793,135.642929 73.821793,140.441071 73.821793,146.099213 
 	C70.257446,145.785828 66.588219,146.375351 63.994164,144.974243 
@@ -341,13 +344,13 @@ M73.784760,130.378418
 	C58.495861,135.116638 61.027264,131.187286 63.428658,130.096802 
 	C66.303497,128.791336 70.259796,129.867416 73.784760,130.378418 
 z" />
-                <path fill="#CFCECC" opacity="1.000000" stroke="none" d="
+				<path fill="#CFCECC" opacity="1.000000" stroke="none" d="
 M58.332829,377.647644 
 	C59.442406,369.307434 62.401417,367.516083 73.470871,368.297638 
 	C73.470871,373.614319 73.470871,378.974030 73.470871,384.357178 
 	C64.951477,386.318237 60.903183,384.627869 58.332829,377.647644 
 z" />
-                <path fill="#CFCDCB" opacity="1.000000" stroke="none" d="
+				<path fill="#CFCDCB" opacity="1.000000" stroke="none" d="
 M69.982788,49.114548 
 	C71.559837,50.050724 72.789009,50.900269 73.778557,51.971218 
 	C74.110588,52.330570 73.832756,53.253906 73.832787,53.919456 
@@ -356,14 +359,14 @@ M69.982788,49.114548
 	C62.324150,66.156548 58.088406,63.055244 58.168228,57.575382 
 	C58.245113,52.297375 62.182831,49.367920 69.982788,49.114548 
 z" />
-                <path fill="#CFCDCB" opacity="1.000000" stroke="none" d="
+				<path fill="#CFCDCB" opacity="1.000000" stroke="none" d="
 M62.482391,449.098938 
 	C66.247849,448.446289 69.657074,447.986694 73.487442,447.470306 
 	C73.487442,453.517639 73.487442,458.904205 73.487442,464.277771 
 	C66.009544,465.667603 61.310360,464.413788 59.288128,460.260132 
 	C57.161835,455.892822 58.301773,452.203827 62.482391,449.098938 
 z" />
-                <path fill="#030302" opacity="1.000000" stroke="none" d="
+				<path fill="#030302" opacity="1.000000" stroke="none" d="
 M404.672363,219.814499 
 	C404.915405,228.365814 404.893555,236.708633 404.799530,245.466003 
 	C401.537323,250.887405 396.866638,252.384201 391.101532,252.378006 
@@ -407,7 +410,7 @@ M271.508087,90.901520
 	C281.045746,100.409187 281.480347,95.893646 281.960846,90.901520 
 	C278.401276,90.901520 275.440979,90.901520 271.508087,90.901520 
 z" />
-                <path fill="#040201" opacity="1.000000" stroke="none" d="
+				<path fill="#040201" opacity="1.000000" stroke="none" d="
 M404.674561,310.809387 
 	C405.166504,312.844666 405.374542,314.674530 405.588928,316.836731 
 	C403.712128,321.137054 400.458160,322.361115 396.230927,322.358521 
@@ -417,7 +420,7 @@ M404.674561,310.809387
 	C231.786667,307.140442 313.899017,307.114777 396.010956,307.293945 
 	C398.806580,307.300049 401.597534,309.452179 404.674561,310.809387 
 z" />
-                <path fill="#030201" opacity="1.000000" stroke="none" d="
+				<path fill="#030201" opacity="1.000000" stroke="none" d="
 M196.999969,438.219666 
 	C181.342407,438.219543 166.184814,438.227997 151.027283,438.207886 
 	C149.199341,438.205444 146.910263,438.706146 145.645416,437.818604 
@@ -431,7 +434,7 @@ M196.999969,438.219666
 	C319.610626,438.256378 317.758453,438.211243 315.928955,438.211731 
 	C276.452637,438.222046 236.976303,438.219604 196.999969,438.219666 
 z" />
-                <path fill="#050301" opacity="1.000000" stroke="none" d="
+				<path fill="#050301" opacity="1.000000" stroke="none" d="
 M198.200623,340.448853 
 	C199.363525,342.914825 200.844055,345.147888 200.869736,347.397552 
 	C201.065598,364.551910 200.898788,381.710083 201.034698,398.865601 
@@ -453,7 +456,7 @@ M198.200623,340.448853
 	C178.787125,358.730896 182.455338,352.300385 185.949966,345.776886 
 	C188.573166,340.880157 192.289185,338.670166 198.200623,340.448853 
 z" />
-                <path fill="#060402" opacity="1.000000" stroke="none" d="
+				<path fill="#060402" opacity="1.000000" stroke="none" d="
 M313.871887,404.660583 
 	C312.054474,402.750763 310.306427,401.145477 309.219574,399.175385 
 	C304.163330,390.010254 299.296448,380.740723 294.344482,371.517853 
@@ -473,7 +476,7 @@ M313.871887,404.660583
 	C322.961761,362.864838 323.064697,380.006226 323.061462,397.146606 
 	C323.060028,404.868469 322.104919,405.692657 313.871887,404.660583 
 z" />
-                <path fill="#040301" opacity="1.000000" stroke="none" d="
+				<path fill="#040301" opacity="1.000000" stroke="none" d="
 M381.852661,399.811951 
 	C374.050995,406.605591 361.219360,407.926117 352.634857,403.006989 
 	C346.931427,399.738770 344.123871,394.562164 344.016266,388.190460 
@@ -490,7 +493,7 @@ M381.852661,399.811951
 	C386.870239,358.869568 387.179871,373.039062 386.578613,387.169891 
 	C386.400726,391.350403 383.664856,395.422089 381.852661,399.811951 
 z" />
-                <path fill="#050301" opacity="1.000000" stroke="none" d="
+				<path fill="#050301" opacity="1.000000" stroke="none" d="
 M221.879028,359.001587 
 	C221.880234,354.008789 221.979034,349.512665 221.850037,345.023132 
 	C221.756271,341.759674 223.049881,339.850616 226.384506,339.827637 
@@ -511,7 +514,7 @@ M221.879028,359.001587
 	C222.438171,405.203430 221.887543,404.586639 221.882339,397.943756 
 	C221.872284,385.129547 221.879181,372.315308 221.879028,359.001587 
 z" />
-                <path fill="#040201" opacity="1.000000" stroke="none" d="
+				<path fill="#040201" opacity="1.000000" stroke="none" d="
 M404.714722,426.785248 
 	C404.960754,429.387360 404.928619,431.772339 404.815918,434.520447 
 	C401.923767,435.996094 399.135712,437.993805 396.296600,438.069336 
@@ -521,7 +524,7 @@ M404.714722,426.785248
 	C370.298645,423.017883 383.450043,422.894012 396.586945,423.239838 
 	C399.230835,423.309448 401.821411,425.406067 404.714722,426.785248 
 z" />
-                <path fill="#E2E2E2" opacity="1.000000" stroke="none" d="
+				<path fill="#E2E2E2" opacity="1.000000" stroke="none" d="
 M320.978882,212.857635 
 	C289.770844,212.925812 258.562805,212.993988 227.354752,213.062225 
 	C225.860550,213.065491 224.360138,212.982956 222.873291,213.089340 
@@ -535,7 +538,7 @@ M320.978882,212.857635
 	C278.210205,132.772202 291.257812,143.535110 301.259216,157.817093 
 	C312.851624,174.370972 318.994934,192.866608 320.978882,212.857635 
 z" />
-                <path fill="#C8C8C8" opacity="1.000000" stroke="none" d="
+				<path fill="#C8C8C8" opacity="1.000000" stroke="none" d="
 M321.441101,212.948822 
 	C318.994934,192.866608 312.851624,174.370972 301.259216,157.817093 
 	C291.257812,143.535110 278.210205,132.772202 262.989014,124.486748 
@@ -545,7 +548,7 @@ M321.441101,212.948822
 	C371.144135,211.356461 371.118591,211.856369 371.118591,213.040024 
 	C354.710968,213.040024 338.307159,213.040024 321.441101,212.948822 
 z" />
-                <path fill="#D2D0CE" opacity="1.000000" stroke="none" d="
+				<path fill="#D2D0CE" opacity="1.000000" stroke="none" d="
 M194.339325,221.311218 
 	C200.887039,220.960175 207.277710,220.964737 214.107483,220.963013 
 	C216.386673,227.083679 217.961838,228.206268 225.127731,228.207962 
@@ -557,7 +560,7 @@ M194.339325,221.311218
 	C165.237350,228.213425 175.184387,228.180649 185.131058,228.227829 
 	C189.803772,228.250000 193.295883,226.794846 194.339325,221.311218 
 z" />
-                <path fill="#F9F9F9" opacity="1.000000" stroke="none" d="
+				<path fill="#F9F9F9" opacity="1.000000" stroke="none" d="
 M271.994385,90.901520 
 	C275.440979,90.901520 278.401276,90.901520 281.960846,90.901520 
 	C281.480347,95.893646 281.045746,100.409187 280.581482,105.232567 
@@ -565,335 +568,362 @@ M271.994385,90.901520
 	C264.593933,100.779594 264.106140,96.119125 263.560059,90.901520 
 	C266.614349,90.901520 269.061218,90.901520 271.994385,90.901520 
 z" />
-            </svg>
-        </button>
-        <!-- Logo with an image and heading -->
-        <div class="logo">
-            <img src="./assets/images/cutlery.png" alt="logo">
-            <h1>
-                Grahini
-            </h1>
-        </div>
+			</svg>
+		</button>
+		<!-- Logo with an image and heading -->
+		<div class="logo">
+			<img src="./assets/images/cutlery.png" alt="logo">
+			<h1>
+				Grahini
+			</h1>
+		</div>
 
-        <!-- Button within the header -->
-        <div class="button">
-            <button>Dine with Us</button>
-        </div>
-    </div>
+		<!-- Button within the header -->
+		<div class="button">
+			<button>Dine with Us</button>
+		</div>
+	</div>
 
-    <div class="sidebar">
-        <a href="#">Dinner</a>
-        <a href="#">Dinner</a>
-        <a href="#">Dinner</a>
-        <a href="#">Dinner</a>
-        <a href="#">Dinner</a>
-        <a href="#">Dinner</a>
-    </div>
-
-
-    <!-- Main container for the webpage -->
-    <div class="container">
-
-        <video autoplay loop poster="./assets/images/poster.jpg" id="bgVideo" playsinline muted>
-            <!-- Source of the background video -->
-            <source src="/assets/images/background.mp4" type="video/mp4">
-        </video>
-
-        <!-- Intro section with a viewport header -->
-        <div class="intro">
-            <div class="viewport-header">
-                <!-- Heading in the intro section -->
-                <h1>EXPLORE
-                    <!-- Span within the heading -->
-                    <span>Grahini</span>
-                </h1>
-            </div>
-        </div>
-
-        <main>
-            <!-- Main content container section -->
-            <div class="content-container">
-                <section class="blank">
-                    <h1>ScrollTrigger Bi-Directional Fake Horizontal Scroll</h1>
-                    <p>...</p>
-                </section>
-
-                <section class="horizontal">
-                    <div class="pin-wrap">
-                        <div class="animation-wrap to-right">
-
-                            <div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus,
-                                temporibus esse magni illum eos natus ipsum minus? Quis excepturi voluptates atque
-                                dolorum
-                                minus eligendi! Omnis minima magni recusandae ex dignissimos.</div>
-                            <div class="item">Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa ratione ex,
-                                dicta aliquam voluptates! Odio vitae eum nobis dignissimos sunt ipsum repellendus totam
-                                optio distinctio. Laborum suscipit quia aperiam.</div>
-                            <div class="item">Animi, porro molestias? Reiciendis dolor aspernatur ab quos nulla impedit,
-                                dolores ullam hic commodi nobis nam. Dolorem expedita laudantium dignissimos nobis a.
-                                Dolorem, unde quidem. Tempora et a quibusdam inventore!</div>
-                            <div class="item">Labore, unde amet! Alias delectus hic laboriosam et dolorum? Saepe, dicta
-                                eaque? Veniam eos blanditiis neque. Officia et nostrum, tempore modi quo praesentium
-                                aspernatur vero dolor, ipsa unde perspiciatis minima.</div>
-                            <div class="item">Quaerat error dolorem aspernatur magni dicta ut consequuntur maxime
-                                tempore.
-                                Animi odio eos quod culpa nulla consectetur? Aperiam ipsam ducimus delectus
-                                reprehenderit
-                                unde, non laborum voluptate laboriosam, officiis at ea!</div>
-                            <div class="item">Rem nobis facere provident magni minima iste commodi aliquam harum? Facere
-                                error quos cumque perspiciatis voluptatibus deserunt maiores, fugiat sunt sit ab
-                                inventore
-                                natus saepe, eveniet alias ipsam placeat voluptas!</div>
-                            <div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus,
-                                temporibus esse magni illum eos natus ipsum minus? Quis excepturi voluptates atque
-                                dolorum
-                                minus eligendi! Omnis minima magni recusandae ex dignissimos.</div>
-                            <div class="item">Magnam eveniet inventore assumenda ullam. At saepe voluptatibus sed dicta
-                                reiciendis, excepturi nisi perferendis, accusantium est suscipit tempora dolorum
-                                praesentium
-                                cupiditate doloribus non? Sint numquam recusandae dolore quis esse ea?</div>
-                            <div class="item">Temporibus cum dolor minima consequatur esse veritatis enim nemo
-                                cupiditate
-                                laborum doloribus reiciendis perferendis, quas fugit earum rerum, at beatae alias amet
-                                aspernatur dolorem dolore error commodi. Perspiciatis, reiciendis amet!</div>
-                            <div class="item">Vitae, tenetur beatae error corrupti odit expedita quisquam commodi ea
-                                aspernatur aliquid, eveniet reprehenderit sequi, similique maiores praesentium quam!
-                                Optio
-                                tenetur saepe unde voluptatem minus tempora maxime temporibus ducimus ullam!</div>
-
-                        </div>
-                    </div>
-                </section>
+	<div class="sidebar">
+		<a href="#">Dinner</a>
+		<a href="#">Dinner</a>
+		<a href="#">Dinner</a>
+		<a href="#">Dinner</a>
+		<a href="#">Dinner</a>
+		<a href="#">Dinner</a>
+	</div>
 
 
-                <section class="blank">
-                    <h1>Nothing to see here...</h1>
-                    <p>...</p>
-                </section>
+	<!-- Main container for the webpage -->
+	<div class="container">
+
+		<video autoplay loop poster="./assets/images/poster.jpg" id="bgVideo" playsinline muted>
+			<!-- Source of the background video -->
+			<source src="/assets/images/background.mp4" type="video/mp4">
+		</video>
+
+		<!-- Intro section with a viewport header -->
+		<div class="intro">
+			<div class="viewport-header">
+				<!-- Heading in the intro section -->
+				<h1>EXPLORE
+					<!-- Span within the heading -->
+					<span>Grahini</span>
+				</h1>
+			</div>
+		</div>
+
+		<main>
+			<!-- Main content container section -->
+			<div class="content-container">
+				<section class="blank">
+					<h1>ScrollTrigger Bi-Directional Fake Horizontal Scroll</h1>
+					<p>...</p>
+				</section>
+
+				<section class="horizontal">
+					<div class="pin-wrap">
+						<div class="animation-wrap to-right">
+
+							<div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus,
+								temporibus esse magni illum eos natus ipsum minus? Quis excepturi voluptates atque
+								dolorum
+								minus eligendi! Omnis minima magni recusandae ex dignissimos.</div>
+							<div class="item">Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa ratione ex,
+								dicta aliquam voluptates! Odio vitae eum nobis dignissimos sunt ipsum repellendus totam
+								optio distinctio. Laborum suscipit quia aperiam.</div>
+							<div class="item">Animi, porro molestias? Reiciendis dolor aspernatur ab quos nulla impedit,
+								dolores ullam hic commodi nobis nam. Dolorem expedita laudantium dignissimos nobis a.
+								Dolorem, unde quidem. Tempora et a quibusdam inventore!</div>
+							<div class="item">Labore, unde amet! Alias delectus hic laboriosam et dolorum? Saepe, dicta
+								eaque? Veniam eos blanditiis neque. Officia et nostrum, tempore modi quo praesentium
+								aspernatur vero dolor, ipsa unde perspiciatis minima.</div>
+							<div class="item">Quaerat error dolorem aspernatur magni dicta ut consequuntur maxime
+								tempore.
+								Animi odio eos quod culpa nulla consectetur? Aperiam ipsam ducimus delectus
+								reprehenderit
+								unde, non laborum voluptate laboriosam, officiis at ea!</div>
+							<div class="item">Rem nobis facere provident magni minima iste commodi aliquam harum? Facere
+								error quos cumque perspiciatis voluptatibus deserunt maiores, fugiat sunt sit ab
+								inventore
+								natus saepe, eveniet alias ipsam placeat voluptas!</div>
+							<div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus,
+								temporibus esse magni illum eos natus ipsum minus? Quis excepturi voluptates atque
+								dolorum
+								minus eligendi! Omnis minima magni recusandae ex dignissimos.</div>
+							<div class="item">Magnam eveniet inventore assumenda ullam. At saepe voluptatibus sed dicta
+								reiciendis, excepturi nisi perferendis, accusantium est suscipit tempora dolorum
+								praesentium
+								cupiditate doloribus non? Sint numquam recusandae dolore quis esse ea?</div>
+							<div class="item">Temporibus cum dolor minima consequatur esse veritatis enim nemo
+								cupiditate
+								laborum doloribus reiciendis perferendis, quas fugit earum rerum, at beatae alias amet
+								aspernatur dolorem dolore error commodi. Perspiciatis, reiciendis amet!</div>
+							<div class="item">Vitae, tenetur beatae error corrupti odit expedita quisquam commodi ea
+								aspernatur aliquid, eveniet reprehenderit sequi, similique maiores praesentium quam!
+								Optio
+								tenetur saepe unde voluptatem minus tempora maxime temporibus ducimus ullam!</div>
+
+						</div>
+					</div>
+				</section>
 
 
-
-                <section class="horizontal">
-                    <div class="pin-wrap">
-                        <div class="animation-wrap to-left">
-                            <div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus,
-                                temporibus esse magni illum eos natus ipsum minus? Quis excepturi voluptates atque
-                                dolorum
-                                minus eligendi! Omnis minima magni recusandae ex dignissimos.</div>
-                            <div class="item">Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa ratione ex,
-                                dicta aliquam voluptates! Odio vitae eum nobis dignissimos sunt ipsum repellendus totam
-                                optio distinctio. Laborum suscipit quia aperiam.</div>
-                            <div class="item">Animi, porro molestias? Reiciendis dolor aspernatur ab quos nulla impedit,
-                                dolores ullam hic commodi nobis nam. Dolorem expedita laudantium dignissimos nobis a.
-                                Dolorem, unde quidem. Tempora et a quibusdam inventore!</div>
-                            <div class="item">Labore, unde amet! Alias delectus hic laboriosam et dolorum? Saepe, dicta
-                                eaque? Veniam eos blanditiis neque. Officia et nostrum, tempore modi quo praesentium
-                                aspernatur vero dolor, ipsa unde perspiciatis minima.</div>
-                            <div class="item">Quaerat error dolorem aspernatur magni dicta ut consequuntur maxime
-                                tempore.
-                                Animi odio eos quod culpa nulla consectetur? Aperiam ipsam ducimus delectus
-                                reprehenderit
-                                unde, non laborum voluptate laboriosam, officiis at ea!</div>
-                            <div class="item">Rem nobis facere provident magni minima iste commodi aliquam harum? Facere
-                                error quos cumque perspiciatis voluptatibus deserunt maiores, fugiat sunt sit ab
-                                inventore
-                                natus saepe, eveniet alias ipsam placeat voluptas!</div>
-                            <div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus,
-                                temporibus esse magni illum eos natus ipsum minus? Quis excepturi voluptates atque
-                                dolorum
-                                minus eligendi! Omnis minima magni recusandae ex dignissimos.</div>
-                            <div class="item">Magnam eveniet inventore assumenda ullam. At saepe voluptatibus sed dicta
-                                reiciendis, excepturi nisi perferendis, accusantium est suscipit tempora dolorum
-                                praesentium
-                                cupiditate doloribus non? Sint numquam recusandae dolore quis esse ea?</div>
-                            <div class="item">Temporibus cum dolor minima consequatur esse veritatis enim nemo
-                                cupiditate
-                                laborum doloribus reiciendis perferendis, quas fugit earum rerum, at beatae alias amet
-                                aspernatur dolorem dolore error commodi. Perspiciatis, reiciendis amet!</div>
-                            <div class="item">Vitae, tenetur beatae error corrupti odit expedita quisquam commodi ea
-                                aspernatur aliquid, eveniet reprehenderit sequi, similique maiores praesentium quam!
-                                Optio
-                                tenetur saepe unde voluptatem minus tempora maxime temporibus ducimus ullam!</div>
-
-                        </div>
-                    </div>
-                </section>
+				<section class="blank">
+					<h1>Nothing to see here...</h1>
+					<p>...</p>
+				</section>
 
 
 
-                <section class="blank">
-                    <h1>...ScrollTrigger for the win...</h1>
-                    <p>...</p>
-                </section>
+				<section class="horizontal">
+					<div class="pin-wrap">
+						<div class="animation-wrap to-left">
+							<div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus,
+								temporibus esse magni illum eos natus ipsum minus? Quis excepturi voluptates atque
+								dolorum
+								minus eligendi! Omnis minima magni recusandae ex dignissimos.</div>
+							<div class="item">Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa ratione ex,
+								dicta aliquam voluptates! Odio vitae eum nobis dignissimos sunt ipsum repellendus totam
+								optio distinctio. Laborum suscipit quia aperiam.</div>
+							<div class="item">Animi, porro molestias? Reiciendis dolor aspernatur ab quos nulla impedit,
+								dolores ullam hic commodi nobis nam. Dolorem expedita laudantium dignissimos nobis a.
+								Dolorem, unde quidem. Tempora et a quibusdam inventore!</div>
+							<div class="item">Labore, unde amet! Alias delectus hic laboriosam et dolorum? Saepe, dicta
+								eaque? Veniam eos blanditiis neque. Officia et nostrum, tempore modi quo praesentium
+								aspernatur vero dolor, ipsa unde perspiciatis minima.</div>
+							<div class="item">Quaerat error dolorem aspernatur magni dicta ut consequuntur maxime
+								tempore.
+								Animi odio eos quod culpa nulla consectetur? Aperiam ipsam ducimus delectus
+								reprehenderit
+								unde, non laborum voluptate laboriosam, officiis at ea!</div>
+							<div class="item">Rem nobis facere provident magni minima iste commodi aliquam harum? Facere
+								error quos cumque perspiciatis voluptatibus deserunt maiores, fugiat sunt sit ab
+								inventore
+								natus saepe, eveniet alias ipsam placeat voluptas!</div>
+							<div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus,
+								temporibus esse magni illum eos natus ipsum minus? Quis excepturi voluptates atque
+								dolorum
+								minus eligendi! Omnis minima magni recusandae ex dignissimos.</div>
+							<div class="item">Magnam eveniet inventore assumenda ullam. At saepe voluptatibus sed dicta
+								reiciendis, excepturi nisi perferendis, accusantium est suscipit tempora dolorum
+								praesentium
+								cupiditate doloribus non? Sint numquam recusandae dolore quis esse ea?</div>
+							<div class="item">Temporibus cum dolor minima consequatur esse veritatis enim nemo
+								cupiditate
+								laborum doloribus reiciendis perferendis, quas fugit earum rerum, at beatae alias amet
+								aspernatur dolorem dolore error commodi. Perspiciatis, reiciendis amet!</div>
+							<div class="item">Vitae, tenetur beatae error corrupti odit expedita quisquam commodi ea
+								aspernatur aliquid, eveniet reprehenderit sequi, similique maiores praesentium quam!
+								Optio
+								tenetur saepe unde voluptatem minus tempora maxime temporibus ducimus ullam!</div>
+
+						</div>
+					</div>
+				</section>
 
 
 
-                <section class="horizontal">
-                    <div class="pin-wrap">
-                        <div class="animation-wrap to-right">
-                            <div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus,
-                                temporibus esse magni illum eos natus ipsum minus? Quis excepturi voluptates atque
-                                dolorum
-                                minus eligendi! Omnis minima magni recusandae ex dignissimos.</div>
-                            <div class="item">Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa ratione ex,
-                                dicta aliquam voluptates! Odio vitae eum nobis dignissimos sunt ipsum repellendus totam
-                                optio distinctio. Laborum suscipit quia aperiam.</div>
-                            <div class="item">Animi, porro molestias? Reiciendis dolor aspernatur ab quos nulla impedit,
-                                dolores ullam hic commodi nobis nam. Dolorem expedita laudantium dignissimos nobis a.
-                                Dolorem, unde quidem. Tempora et a quibusdam inventore!</div>
-                            <div class="item">Labore, unde amet! Alias delectus hic laboriosam et dolorum? Saepe, dicta
-                                eaque? Veniam eos blanditiis neque. Officia et nostrum, tempore modi quo praesentium
-                                aspernatur vero dolor, ipsa unde perspiciatis minima.</div>
-                            <div class="item">Quaerat error dolorem aspernatur magni dicta ut consequuntur maxime
-                                tempore.
-                                Animi odio eos quod culpa nulla consectetur? Aperiam ipsam ducimus delectus
-                                reprehenderit
-                                unde, non laborum voluptate laboriosam, officiis at ea!</div>
-                            <div class="item">Rem nobis facere provident magni minima iste commodi aliquam harum? Facere
-                                error quos cumque perspiciatis voluptatibus deserunt maiores, fugiat sunt sit ab
-                                inventore
-                                natus saepe, eveniet alias ipsam placeat voluptas!</div>
-                            <div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus,
-                                temporibus esse magni illum eos natus ipsum minus? Quis excepturi voluptates atque
-                                dolorum
-                                minus eligendi! Omnis minima magni recusandae ex dignissimos.</div>
-                            <div class="item">Magnam eveniet inventore assumenda ullam. At saepe voluptatibus sed dicta
-                                reiciendis, excepturi nisi perferendis, accusantium est suscipit tempora dolorum
-                                praesentium
-                                cupiditate doloribus non? Sint numquam recusandae dolore quis esse ea?</div>
-                            <div class="item">Temporibus cum dolor minima consequatur esse veritatis enim nemo
-                                cupiditate
-                                laborum doloribus reiciendis perferendis, quas fugit earum rerum, at beatae alias amet
-                                aspernatur dolorem dolore error commodi. Perspiciatis, reiciendis amet!</div>
-                            <div class="item">Vitae, tenetur beatae error corrupti odit expedita quisquam commodi ea
-                                aspernatur aliquid, eveniet reprehenderit sequi, similique maiores praesentium quam!
-                                Optio
-                                tenetur saepe unde voluptatem minus tempora maxime temporibus ducimus ullam!</div>
-
-                        </div>
-                    </div>
-                </section>
-
-
-                <section class="blank">
-                    <h1>...keep scrollin' scrollin' scrollin' scrollin'...</h1>
-                    <p>...</p>
-                </section>
-
-
-                <section class="horizontal">
-                    <div class="pin-wrap">
-                        <div class="animation-wrap to-left">
-                            <div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus,
-                                temporibus esse magni illum eos natus ipsum minus? Quis excepturi voluptates atque
-                                dolorum
-                                minus eligendi! Omnis minima magni recusandae ex dignissimos.</div>
-                            <div class="item">Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa ratione ex,
-                                dicta aliquam voluptates! Odio vitae eum nobis dignissimos sunt ipsum repellendus totam
-                                optio distinctio. Laborum suscipit quia aperiam.</div>
-                            <div class="item">Animi, porro molestias? Reiciendis dolor aspernatur ab quos nulla impedit,
-                                dolores ullam hic commodi nobis nam. Dolorem expedita laudantium dignissimos nobis a.
-                                Dolorem, unde quidem. Tempora et a quibusdam inventore!</div>
-                            <div class="item">Labore, unde amet! Alias delectus hic laboriosam et dolorum? Saepe, dicta
-                                eaque? Veniam eos blanditiis neque. Officia et nostrum, tempore modi quo praesentium
-                                aspernatur vero dolor, ipsa unde perspiciatis minima.</div>
-                            <div class="item">Quaerat error dolorem aspernatur magni dicta ut consequuntur maxime
-                                tempore.
-                                Animi odio eos quod culpa nulla consectetur? Aperiam ipsam ducimus delectus
-                                reprehenderit
-                                unde, non laborum voluptate laboriosam, officiis at ea!</div>
-                            <div class="item">Rem nobis facere provident magni minima iste commodi aliquam harum? Facere
-                                error quos cumque perspiciatis voluptatibus deserunt maiores, fugiat sunt sit ab
-                                inventore
-                                natus saepe, eveniet alias ipsam placeat voluptas!</div>
-                            <div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus,
-                                temporibus esse magni illum eos natus ipsum minus? Quis excepturi voluptates atque
-                                dolorum
-                                minus eligendi! Omnis minima magni recusandae ex dignissimos.</div>
-                            <div class="item">Magnam eveniet inventore assumenda ullam. At saepe voluptatibus sed dicta
-                                reiciendis, excepturi nisi perferendis, accusantium est suscipit tempora dolorum
-                                praesentium
-                                cupiditate doloribus non? Sint numquam recusandae dolore quis esse ea?</div>
-                            <div class="item">Temporibus cum dolor minima consequatur esse veritatis enim nemo
-                                cupiditate
-                                laborum doloribus reiciendis perferendis, quas fugit earum rerum, at beatae alias amet
-                                aspernatur dolorem dolore error commodi. Perspiciatis, reiciendis amet!</div>
-                            <div class="item">Vitae, tenetur beatae error corrupti odit expedita quisquam commodi ea
-                                aspernatur aliquid, eveniet reprehenderit sequi, similique maiores praesentium quam!
-                                Optio
-                                tenetur saepe unde voluptatem minus tempora maxime temporibus ducimus ullam!</div>
-
-                        </div>
-                    </div>
-                </section>
-
-                <section class="blank">
-                    <h1>...lorem ipsum...</h1>
-                    <p>...</p>
-                </section>
-
-                <section class="horizontal">
-                    <div class="pin-wrap">
-                        <div class="animation-wrap to-left">
-                            <div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus,
-                                temporibus esse magni illum eos natus ipsum minus? Quis excepturi voluptates atque
-                                dolorum
-                                minus eligendi! Omnis minima magni recusandae ex dignissimos.</div>
-                            <div class="item">Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa ratione ex,
-                                dicta aliquam voluptates! Odio vitae eum nobis dignissimos sunt ipsum repellendus totam
-                                optio distinctio. Laborum suscipit quia aperiam.</div>
-                            <div class="item">Animi, porro molestias? Reiciendis dolor aspernatur ab quos nulla impedit,
-                                dolores ullam hic commodi nobis nam. Dolorem expedita laudantium dignissimos nobis a.
-                                Dolorem, unde quidem. Tempora et a quibusdam inventore!</div>
-                            <div class="item">Labore, unde amet! Alias delectus hic laboriosam et dolorum? Saepe, dicta
-                                eaque? Veniam eos blanditiis neque. Officia et nostrum, tempore modi quo praesentium
-                                aspernatur vero dolor, ipsa unde perspiciatis minima.</div>
-                            <div class="item">Quaerat error dolorem aspernatur magni dicta ut consequuntur maxime
-                                tempore.
-                                Animi odio eos quod culpa nulla consectetur? Aperiam ipsam ducimus delectus
-                                reprehenderit
-                                unde, non laborum voluptate laboriosam, officiis at ea!</div>
-                            <div class="item">Rem nobis facere provident magni minima iste commodi aliquam harum? Facere
-                                error quos cumque perspiciatis voluptatibus deserunt maiores, fugiat sunt sit ab
-                                inventore
-                                natus saepe, eveniet alias ipsam placeat voluptas!</div>
-                            <div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus,
-                                temporibus esse magni illum eos natus ipsum minus? Quis excepturi voluptates atque
-                                dolorum
-                                minus eligendi! Omnis minima magni recusandae ex dignissimos.</div>
-                            <div class="item">Magnam eveniet inventore assumenda ullam. At saepe voluptatibus sed dicta
-                                reiciendis, excepturi nisi perferendis, accusantium est suscipit tempora dolorum
-                                praesentium
-                                cupiditate doloribus non? Sint numquam recusandae dolore quis esse ea?</div>
-                            <div class="item">Temporibus cum dolor minima consequatur esse veritatis enim nemo
-                                cupiditate
-                                laborum doloribus reiciendis perferendis, quas fugit earum rerum, at beatae alias amet
-                                aspernatur dolorem dolore error commodi. Perspiciatis, reiciendis amet!</div>
-                            <div class="item">Vitae, tenetur beatae error corrupti odit expedita quisquam commodi ea
-                                aspernatur aliquid, eveniet reprehenderit sequi, similique maiores praesentium quam!
-                                Optio
-                                tenetur saepe unde voluptatem minus tempora maxime temporibus ducimus ullam!</div>
-
-                        </div>
-                    </div>
-                </section>
+				<section class="blank">
+					<h1>...ScrollTrigger for the win...</h1>
+					<p>...</p>
+				</section>
 
 
 
+				<section class="horizontal">
+					<div class="pin-wrap">
+						<div class="animation-wrap to-right">
+							<div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus,
+								temporibus esse magni illum eos natus ipsum minus? Quis excepturi voluptates atque
+								dolorum
+								minus eligendi! Omnis minima magni recusandae ex dignissimos.</div>
+							<div class="item">Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa ratione ex,
+								dicta aliquam voluptates! Odio vitae eum nobis dignissimos sunt ipsum repellendus totam
+								optio distinctio. Laborum suscipit quia aperiam.</div>
+							<div class="item">Animi, porro molestias? Reiciendis dolor aspernatur ab quos nulla impedit,
+								dolores ullam hic commodi nobis nam. Dolorem expedita laudantium dignissimos nobis a.
+								Dolorem, unde quidem. Tempora et a quibusdam inventore!</div>
+							<div class="item">Labore, unde amet! Alias delectus hic laboriosam et dolorum? Saepe, dicta
+								eaque? Veniam eos blanditiis neque. Officia et nostrum, tempore modi quo praesentium
+								aspernatur vero dolor, ipsa unde perspiciatis minima.</div>
+							<div class="item">Quaerat error dolorem aspernatur magni dicta ut consequuntur maxime
+								tempore.
+								Animi odio eos quod culpa nulla consectetur? Aperiam ipsam ducimus delectus
+								reprehenderit
+								unde, non laborum voluptate laboriosam, officiis at ea!</div>
+							<div class="item">Rem nobis facere provident magni minima iste commodi aliquam harum? Facere
+								error quos cumque perspiciatis voluptatibus deserunt maiores, fugiat sunt sit ab
+								inventore
+								natus saepe, eveniet alias ipsam placeat voluptas!</div>
+							<div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus,
+								temporibus esse magni illum eos natus ipsum minus? Quis excepturi voluptates atque
+								dolorum
+								minus eligendi! Omnis minima magni recusandae ex dignissimos.</div>
+							<div class="item">Magnam eveniet inventore assumenda ullam. At saepe voluptatibus sed dicta
+								reiciendis, excepturi nisi perferendis, accusantium est suscipit tempora dolorum
+								praesentium
+								cupiditate doloribus non? Sint numquam recusandae dolore quis esse ea?</div>
+							<div class="item">Temporibus cum dolor minima consequatur esse veritatis enim nemo
+								cupiditate
+								laborum doloribus reiciendis perferendis, quas fugit earum rerum, at beatae alias amet
+								aspernatur dolorem dolore error commodi. Perspiciatis, reiciendis amet!</div>
+							<div class="item">Vitae, tenetur beatae error corrupti odit expedita quisquam commodi ea
+								aspernatur aliquid, eveniet reprehenderit sequi, similique maiores praesentium quam!
+								Optio
+								tenetur saepe unde voluptatem minus tempora maxime temporibus ducimus ullam!</div>
 
-                <section class="blank">
-                    <h1>...what do you think?</h1>
-                    <p>...</p>
-                </section>
-            </div>
-        </main>
-
-    </div>
+						</div>
+					</div>
+				</section>
 
 
+				<section class="blank">
+					<h1>...keep scrollin' scrollin' scrollin' scrollin'...</h1>
+					<p>...</p>
+				</section>
 
-    <!-- Load custom JavaScript file for additional scripting -->
-    <script src="./assets/js/script.js"></script>
+
+				<section class="horizontal">
+					<div class="pin-wrap">
+						<div class="animation-wrap to-left">
+							<div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus,
+								temporibus esse magni illum eos natus ipsum minus? Quis excepturi voluptates atque
+								dolorum
+								minus eligendi! Omnis minima magni recusandae ex dignissimos.</div>
+							<div class="item">Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa ratione ex,
+								dicta aliquam voluptates! Odio vitae eum nobis dignissimos sunt ipsum repellendus totam
+								optio distinctio. Laborum suscipit quia aperiam.</div>
+							<div class="item">Animi, porro molestias? Reiciendis dolor aspernatur ab quos nulla impedit,
+								dolores ullam hic commodi nobis nam. Dolorem expedita laudantium dignissimos nobis a.
+								Dolorem, unde quidem. Tempora et a quibusdam inventore!</div>
+							<div class="item">Labore, unde amet! Alias delectus hic laboriosam et dolorum? Saepe, dicta
+								eaque? Veniam eos blanditiis neque. Officia et nostrum, tempore modi quo praesentium
+								aspernatur vero dolor, ipsa unde perspiciatis minima.</div>
+							<div class="item">Quaerat error dolorem aspernatur magni dicta ut consequuntur maxime
+								tempore.
+								Animi odio eos quod culpa nulla consectetur? Aperiam ipsam ducimus delectus
+								reprehenderit
+								unde, non laborum voluptate laboriosam, officiis at ea!</div>
+							<div class="item">Rem nobis facere provident magni minima iste commodi aliquam harum? Facere
+								error quos cumque perspiciatis voluptatibus deserunt maiores, fugiat sunt sit ab
+								inventore
+								natus saepe, eveniet alias ipsam placeat voluptas!</div>
+							<div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus,
+								temporibus esse magni illum eos natus ipsum minus? Quis excepturi voluptates atque
+								dolorum
+								minus eligendi! Omnis minima magni recusandae ex dignissimos.</div>
+							<div class="item">Magnam eveniet inventore assumenda ullam. At saepe voluptatibus sed dicta
+								reiciendis, excepturi nisi perferendis, accusantium est suscipit tempora dolorum
+								praesentium
+								cupiditate doloribus non? Sint numquam recusandae dolore quis esse ea?</div>
+							<div class="item">Temporibus cum dolor minima consequatur esse veritatis enim nemo
+								cupiditate
+								laborum doloribus reiciendis perferendis, quas fugit earum rerum, at beatae alias amet
+								aspernatur dolorem dolore error commodi. Perspiciatis, reiciendis amet!</div>
+							<div class="item">Vitae, tenetur beatae error corrupti odit expedita quisquam commodi ea
+								aspernatur aliquid, eveniet reprehenderit sequi, similique maiores praesentium quam!
+								Optio
+								tenetur saepe unde voluptatem minus tempora maxime temporibus ducimus ullam!</div>
+
+						</div>
+					</div>
+				</section>
+
+				<section class="blank">
+					<h1>...lorem ipsum...</h1>
+					<p>...</p>
+				</section>
+
+				<section class="horizontal">
+					<div class="pin-wrap">
+						<div class="animation-wrap to-left">
+							<div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus,
+								temporibus esse magni illum eos natus ipsum minus? Quis excepturi voluptates atque
+								dolorum
+								minus eligendi! Omnis minima magni recusandae ex dignissimos.</div>
+							<div class="item">Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa ratione ex,
+								dicta aliquam voluptates! Odio vitae eum nobis dignissimos sunt ipsum repellendus totam
+								optio distinctio. Laborum suscipit quia aperiam.</div>
+							<div class="item">Animi, porro molestias? Reiciendis dolor aspernatur ab quos nulla impedit,
+								dolores ullam hic commodi nobis nam. Dolorem expedita laudantium dignissimos nobis a.
+								Dolorem, unde quidem. Tempora et a quibusdam inventore!</div>
+							<div class="item">Labore, unde amet! Alias delectus hic laboriosam et dolorum? Saepe, dicta
+								eaque? Veniam eos blanditiis neque. Officia et nostrum, tempore modi quo praesentium
+								aspernatur vero dolor, ipsa unde perspiciatis minima.</div>
+							<div class="item">Quaerat error dolorem aspernatur magni dicta ut consequuntur maxime
+								tempore.
+								Animi odio eos quod culpa nulla consectetur? Aperiam ipsam ducimus delectus
+								reprehenderit
+								unde, non laborum voluptate laboriosam, officiis at ea!</div>
+							<div class="item">Rem nobis facere provident magni minima iste commodi aliquam harum? Facere
+								error quos cumque perspiciatis voluptatibus deserunt maiores, fugiat sunt sit ab
+								inventore
+								natus saepe, eveniet alias ipsam placeat voluptas!</div>
+							<div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus,
+								temporibus esse magni illum eos natus ipsum minus? Quis excepturi voluptates atque
+								dolorum
+								minus eligendi! Omnis minima magni recusandae ex dignissimos.</div>
+							<div class="item">Magnam eveniet inventore assumenda ullam. At saepe voluptatibus sed dicta
+								reiciendis, excepturi nisi perferendis, accusantium est suscipit tempora dolorum
+								praesentium
+								cupiditate doloribus non? Sint numquam recusandae dolore quis esse ea?</div>
+							<div class="item">Temporibus cum dolor minima consequatur esse veritatis enim nemo
+								cupiditate
+								laborum doloribus reiciendis perferendis, quas fugit earum rerum, at beatae alias amet
+								aspernatur dolorem dolore error commodi. Perspiciatis, reiciendis amet!</div>
+							<div class="item">Vitae, tenetur beatae error corrupti odit expedita quisquam commodi ea
+								aspernatur aliquid, eveniet reprehenderit sequi, similique maiores praesentium quam!
+								Optio
+								tenetur saepe unde voluptatem minus tempora maxime temporibus ducimus ullam!</div>
+
+						</div>
+					</div>
+				</section>
+
+
+
+
+				<section class="blank">
+					<h1>...what do you think?</h1>
+					<p>...</p>
+				</section>
+			</div>
+		</main>
+
+	</div>
+
+	<footer class="footer">
+		<div class="footer-container">
+
+			<div class="footer-top">
+				<div class="logo">
+					<h1>
+						Grahini
+					</h1>
+					<img src="./assets/images/cutlery.png" alt="logo">
+				</div>
+				<button onclick="goToTop()"><span>&uarr;</span></button>
+			</div>
+
+			<div class=" footer-bottom">
+				<div class="items">
+					<div class="item"></div>
+					<div class="item"></div>
+					<div class="item"></div>
+				</div>
+
+				<div class="circles">
+					<div class="circle"></div>
+				</div>
+
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- Load custom JavaScript file for additional scripting -->
+	<script src="./assets/js/script.js"></script>
 </body>
 
 </html>

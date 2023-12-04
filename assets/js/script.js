@@ -16,6 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 3000);
 
 
+
+
+  
+
   // Get the header element
   let header = document.querySelector('.header');
 
@@ -63,6 +67,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+
+
   // Function to toggle the sidebar
   function toggleSidebar() {
     if (isHeaderVisible) {
@@ -84,8 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-
+// Section horizontal scroll
 
 const horizontalSections = gsap.utils.toArray('section.horizontal')
 
@@ -113,4 +118,14 @@ horizontalSections.forEach(function (sec, i) {
     }
   });
 
-});	
+});
+
+
+// GO TO TOP
+function goToTop() {
+  // Scroll to the top of the page with a smooth animation
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
