@@ -342,7 +342,7 @@ video#bgVideo {
     display: flex;
     justify-content: end;
     align-items: center;
-    padding: 2vw;
+    padding: .5vw 2vw;
 }
 
 .login-box .box-header button {
@@ -365,6 +365,12 @@ video#bgVideo {
 .box-content {
     height: 100%;
     width: 100%;
+}
+
+.box-content iframe {
+    height: 100%;
+    width: 100%;
+    border: none;
 }
 
 main {

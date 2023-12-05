@@ -143,6 +143,28 @@ horizontalSections.forEach(function (sec, i) {
     }
   });
 
+
+
+
+
+
+
+  // Function to open the login form
+  function openForm() {
+    document.getElementById("login").style.display = 'block';
+  }
+
+  // Function to close the login form
+  function closeForm() {
+    document.getElementById("login").style.display = 'none';
+  }
+
+  // Call the openForm function when needed (e.g., button click)
+  document.querySelector(".login-button").addEventListener("click", openForm);
+
+  // Call the closeForm function when needed (e.g., close button click)
+  document.querySelector(".close").addEventListener("click", closeForm);
+
 });
 
 
@@ -182,14 +204,3 @@ window.addEventListener('beforeunload', function () {
   // Scroll to the top of the page
   window.scrollTo(0, 0);
 });
-
-
-// login Form
-
-const login = document.getElementById("login");
-function openForm() {
-  login.style.display = 'block';
-}
-function closeForm() {
-  login.style.display = 'none';
-}
