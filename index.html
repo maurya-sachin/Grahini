@@ -571,21 +571,32 @@ z" />
 			</svg>
 		</button>
 		<!-- Logo with an image and heading -->
-		<div class="logo">
-			<img src="./assets/images/cutlery.png" alt="logo">
-			<h1>
-				Grahini
-			</h1>
-		</div>
+		<a href="#">
+			<div class="logo">
+				<img src="./assets/images/cutlery.png" alt="logo">
+				<h1>
+					Grahini
+				</h1>
+			</div>
+		</a>
 
-		<!-- Button within the header -->
-		<div class="button">
-			<button>Dine with Us</button>
+		<div class="control">
+			<div id="userBox">
+				<div class="profilePic">
+					<img src="./assets/images/user.png" id="userImage" alt="admin">
+				</div>
+				<div class="userName">
+					<p>Welcome</br><span id="userName">Admin</span></p>
+				</div>
+			</div>
+			<!-- Button within the header -->
+			<div class="button">
+				<button class="login-button">Login/Sign Up</button>
+			</div>
 		</div>
 	</div>
 
 	<div class="sidebar">
-		<button class="login-button">Login/Sign Up</button>
 		<a href="#">Dinner</a>
 		<a href="#">Dinner</a>
 		<a href="#">Dinner</a>
@@ -600,6 +611,13 @@ z" />
 		</div>
 		<div class="box-content">
 			<iframe src="/login.html" frameborder="0"></iframe>
+		</div>
+	</div>
+
+	<div class="signInPopup">
+		<div class="popup-wrapper">
+			<p id="resultParagraph">Hello</p>
+			<button onclick="closePopup()">OK</button>
 		</div>
 	</div>
 
@@ -990,7 +1008,7 @@ z" />
 
 	<!-- Load custom JavaScript file for additional scripting -->
 	<script src="./assets/js/script.js"></script>
-
+	<script src="./assets/js/login.js"></script>
 	<script src="./assets/js/ajax.js"></script>
 </body>
 

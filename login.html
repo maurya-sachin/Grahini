@@ -24,10 +24,13 @@
                 <input type="email" placeholder="Email" id="email-sign-up" />
                 <input type="password" placeholder="Password" id="password-sign-up" />
                 <input type="password" placeholder="Confirm Password" id="confirm-password-sign-up" />
-
+                <input type="file" accept="image/*" id="image-upload" onchange="previewImage()" />
+                <img id="image-preview" src="#" alt="Image Preview"
+                    style="display:none; max-width: 60px; max-height: 60px;">
                 <div class="error-sign-up"></div>
-                <div class="success-icon-sign-up"></div>
-                <button>Sign Up</button>
+                <div id="successMessage" style="display: none;"></div>
+
+                <button id="signupButton" onclick="register()">Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
@@ -42,9 +45,9 @@
                 <input type="email" placeholder="Email" id="email-sign-in" />
                 <input type="password" placeholder="Password" id="password-sign-in" />
                 <div class="error-sign-in"></div>
-                <div class="success-icon-sign-in"></div>
+                <div id="successMessage" style="display: none;"></div>
                 <a href="#">Forgot your password?</a>
-                <button>Sign In</button>
+                <button id="signInButton" onclick="signIn()">Sign In</button>
             </form>
         </div>
         <div class="overlay-container">
