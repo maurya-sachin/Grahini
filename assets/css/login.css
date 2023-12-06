@@ -264,6 +264,12 @@ input {
     margin: 5px;
 }
 
+.error-sign-up {
+    color: #ff322b;
+    font-size: 0.75vw;
+    margin: 5px;
+}
+
 input[type=file] {
     border: none;
     padding: .2em .4em;
@@ -347,6 +353,10 @@ input[type=file]::file-selector-button:hover {
     .successMessage {
         font-size: 12px;
     }
+
+    .error-sign-up {
+        font-size: 12px;
+    }
 }
 
 @media only screen and (max-width: 1800px) {
@@ -405,6 +415,10 @@ input[type=file]::file-selector-button:hover {
     .successMessage {
         font-size: 12px;
     }
+
+    .error-sign-up {
+        font-size: 12px;
+    }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -442,6 +456,12 @@ input[type=file]::file-selector-button:hover {
         padding: 0 40px;
     }
 
+    input {
+        padding: 8px 10px;
+        margin: 8px 0;
+        font-size: 12px;
+    }
+
     .container {
         width: 768px;
         height: 600px;
@@ -464,6 +484,10 @@ input[type=file]::file-selector-button:hover {
 
     .success-message,
     .successMessage {
+        font-size: 10px;
+    }
+
+    .error-sign-up {
         font-size: 10px;
     }
 }
@@ -527,6 +551,10 @@ input[type=file]::file-selector-button:hover {
 
     .success-message,
     .successMessage {
+        font-size: 2vw;
+    }
+
+    .error-sign-up {
         font-size: 2vw;
     }
 }

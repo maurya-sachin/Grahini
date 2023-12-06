@@ -19,25 +19,33 @@
                     <a href="#" class="social"><i class="ri-google-fill"></i></a>
                     <a href="#" class="social"><i class="ri-linkedin-fill"></i></a>
                 </div>
+
                 <span>or use your email for registration</span>
                 <input type="text" placeholder="Name" id="name" />
                 <div class="success-message" id="nameSuccessMessage"></div>
+
                 <input type="email" placeholder="Email" id="email-sign-up" />
                 <div class="success-message" id="emailSignUpSuccessMessage"></div>
-                <input type="password" placeholder="Password" id="password-sign-up" />
-                <div class="success-message" id="passwordSignUpSuccessMessage"></div>
-                <input type="password" placeholder="Confirm Password" id="confirm-password-sign-up" />
-                <div class="success-message" id="confirmPasswordSignUpSuccessMessage"></div>
-                <input type="file" accept="image/*" id="image-upload" onchange="previewImage()" />
-                <div class="success-message" id="confirmPasswordSignUpSuccessMessage"></div>
-                <img id="image-preview" src="#" alt="Image Preview"
-                    style="display:none; max-width: 60px; max-height: 60px;">
-                <!-- <div class="error-sign-up"></div> -->
-                <!-- <div id="successMessage" style="display: none;"></div> -->
 
-                <button id="signupButton" onclick="register()">Sign Up</button>
+                <input type="password" autocomplete="off" placeholder="Password" id="password-sign-up" />
+                <div class="success-message" id="passwordSignUpSuccessMessage"></div>
+
+                <input type="password" autocomplete="off" placeholder="Confirm Password"
+                    id="confirm-password-sign-up" />
+                <div class="success-message" id="confirmPasswordSignUpSuccessMessage"></div>
+
+                <input type="file" accept="image/*" id="image-upload" />
+
+                <img id="image-preview" src="#" alt="Image Preview"
+                    style="display:none; max-width: 100px; max-height: 100px; padding: 5px 0;">
+                <div class="error-sign-up"></div>
+
+                <div id="successMessage" style="display: none;"></div>
+
+                <button id="signUp">Sign Up</button>
             </form>
         </div>
+
         <div class="form-container sign-in-container">
             <form id="form-sign-in">
                 <h1>Sign in</h1>
@@ -46,16 +54,19 @@
                     <a href="#" class="social"><i class="ri-google-fill"></i></a>
                     <a href="#" class="social"><i class="ri-linkedin-fill"></i></a>
                 </div>
+
                 <span>or use your account</span>
                 <input type="email" placeholder="Email" id="email-sign-in" />
                 <div class="success-message" id="emailSignInSuccessMessage"></div>
-                <input type="password" placeholder="Password" id="password-sign-in" />
+
+                <input type="password" autocomplete="off" placeholder="Password" id="password-sign-in" />
                 <div class="success-message" id="passwordSignInSuccessMessage"></div>
+
                 <!-- <div class="error-sign-in"></div> -->
-                <!-- <div id="successMessage" style="display: none;"></div> -->
+                <div id="successMessage" style="display: none;"></div>
 
                 <a href="#">Forgot your password?</a>
-                <button id="signInButton" onclick="signIn()">Sign In</button>
+                <button id="signIn">Sign In</button>
             </form>
         </div>
         <div class="overlay-container">
@@ -63,17 +74,17 @@
                 <div class="overlay-panel overlay-left">
                     <h1>Welcome Back!</h1>
                     <p>To keep connected with us please login with your personal info</p>
-                    <button class="ghost" id="signIn">Sign In</button>
+                    <button class="ghost" id="overlaySignIn">Sign In</button>
                 </div>
                 <div class="overlay-panel overlay-right">
                     <h1>Hello, Friend!</h1>
                     <p>Enter your personal details and start the journey with us</p>
-                    <button class="ghost" id="signUp">Sign Up</button>
+                    <button class="ghost" id="overlaySignUp">Sign Up</button>
                 </div>
             </div>
         </div>
     </div>
-    <script src="/assets/js/login.js"></script>
+    <script src="/assets/js/login.js" defer></script>
 </body>
 
 </html>

@@ -1,14 +1,14 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const loginForm = new LoginForm();
-    loginForm.initialize();
-});
-
 class LoginForm {
-    constructor() {
+    constructor(userData) {
         this.container = document.getElementById('container');
         this.signUpButton = document.getElementById('signUp');
         this.signInButton = document.getElementById('signIn');
+        this.overlaySignUp = document.getElementById('overlaySignUp')
+        this.overlaySignIn = document.getElementById('overlaySignIn')
         this.initForms();
+
+        // Assign userData to the instance variable
+        this.userData = userData;
     }
 
     initForms() {
@@ -19,8 +19,6 @@ class LoginForm {
         this.confirmPasswordInput = document.getElementById("confirm-password-sign-up");
         this.emailInputSignIn = document.getElementById("email-sign-in");
         this.passwordInputSignIn = document.getElementById("password-sign-in");
-        this.formSignUp = document.getElementById("form-sign-up");
-        this.formSignIn = document.getElementById("form-sign-in");
 
         // Event listeners for input fields in the sign-up form
         this.nameInput.addEventListener('input', () => this.handleInputValidation(this.nameInput));
@@ -32,20 +30,19 @@ class LoginForm {
         this.emailInputSignIn.addEventListener('input', () => this.handleInputValidation(this.emailInputSignIn));
         this.passwordInputSignIn.addEventListener('input', () => this.handleInputValidation(this.passwordInputSignIn));
 
-        // Submit event listeners for the forms
-        this.formSignUp.addEventListener("submit", (e) => this.handleSignUpFormSubmit(e));
-        this.formSignIn.addEventListener("submit", (e) => this.handleSignInFormSubmit(e));
-
-
+        // Event listener for image preview
+        document.getElementById("image-upload").addEventListener('change', this.previewImage.bind(this));
     }
 
     initialize() {
+        this.signUpButton.addEventListener('click', (e) => this.handleSignUpButtonClick(e));
+        this.signInButton.addEventListener('click', (e) => this.handleSignInButtonClick(e));
+
         // Initialize other elements and event listeners
-        this.signUpButton.addEventListener('click', () => this.showSignUpPanel());
-        this.signInButton.addEventListener('click', () => this.showSignInPanel());
-
-
+        this.overlaySignUp.addEventListener('click', () => this.showSignUpPanel());
+        this.overlaySignIn.addEventListener('click', () => this.showSignInPanel());
     }
+
 
     showSignUpPanel() {
         this.container.classList.add("right-panel-active");
@@ -55,21 +52,17 @@ class LoginForm {
         this.container.classList.remove("right-panel-active");
     }
 
-    handleSignUpFormSubmit(event) {
-        event.preventDefault();
-
+    handleSignUpButtonClick(e) {
+        e.preventDefault()
         if (this.validateSignUpForm()) {
-            // Handle successful form submission
-            this.showSuccessMessage("Sign Up form is validated.");
+            this.register();
         }
     }
 
-    handleSignInFormSubmit(event) {
-        event.preventDefault();
-
+    handleSignInButtonClick(e) {
+        e.preventDefault()
         if (this.validateSignInForm()) {
-            // Handle successful form submission
-            this.showSuccessMessage("Sign In form is validated.");
+            this.signIn();
         }
     }
 
@@ -98,7 +91,7 @@ class LoginForm {
         isValid = this.formValidate(this.emailInputSignIn, "Email cannot be blank or should have the correct format");
 
         // Validate password
-        isValid = this.formValidate(this.passwordInputSignIn, "Password cannot be blank or should be at least 8 characters long") && isValid;
+        isValid = this.formValidate(this.passwordInputSignIn, "Password cannot be blank or should min 8 letter password, with at least a symbol, upper and lower case letters and a number") && isValid;
 
         return isValid;
     }
@@ -140,7 +133,7 @@ class LoginForm {
     regEx(input) {
         let regExName = /^[A-Za-z]+$/;
         let regExEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-        let regExPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm;
+        let regExPassword = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
         if (input.value.match(regExPassword)) {
             return true;
@@ -156,7 +149,6 @@ class LoginForm {
     showErrorMessage(input, message) {
         const errorMsgElement = input.nextElementSibling;
         errorMsgElement.innerHTML = message;
-        input.style.backgroundColor = "#FF4364";
     }
 
     clearErrorMessage(input) {
@@ -166,7 +158,115 @@ class LoginForm {
     }
 
     showSuccessMessage(message) {
-        // Replace with logic to display success message on the page
-        alert(message);
+        // Create a success message element
+        const successMessageElement = document.createElement('div');
+        successMessageElement.className = 'success-message';
+        successMessageElement.innerHTML = message;
+
+        // Append the success message element to the container
+        this.container.appendChild(successMessageElement);
+
+        // Clear the success message after a delay (e.g., 3000 milliseconds)
+        setTimeout(() => {
+            this.container.removeChild(successMessageElement);
+        }, 3000);
+    }
+
+    previewImage() {
+        const preview = document.getElementById("image-preview");
+        const fileInput = document.getElementById("image-upload");
+        const file = fileInput.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                preview.src = e.target.result;
+                preview.style.display = "block";
+            };
+
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "#";
+            preview.style.display = "none";
+        }
+    }
+
+    signIn() {
+        const username = document.getElementById("email-sign-in").value;
+        const password = document.getElementById("password-sign-in").value;
+
+        // Check if the user exists in the fetched JSON data
+        const user = this.userData.find(u => u.email === username && u.password === password);
+
+        if (user) {
+            document.getElementById("resultParagraph").innerText = `Login successful. Welcome, ${user.name}!`;
+            document.querySelector(".signInPopup").style.display = "flex";
+            document.getElementById("userName").innerText = user.name;
+            document.getElementById("userImage").src = user.image;
+        } else {
+            document.getElementById("resultParagraph").innerText = "User not found. Please sign up.";
+            document.querySelector(".signInPopup").style.display = "flex";
+        }
+    }
+
+    register() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email-sign-up").value;
+        const password = document.getElementById("password-sign-up").value;
+        const confirmPassword = document.getElementById("confirm-password-sign-up").value;
+
+        // Clear existing error messages
+        document.querySelector(".error-sign-up").innerText = "";
+
+        if (password !== confirmPassword) {
+            document.querySelector(".error-sign-up").innerText = "Passwords do not match.";
+            return;
+        }
+
+        // Check if the email is already taken in the fetched JSON data
+        if (this.userData.some(u => u.email === email)) {
+            document.querySelector(".error-sign-up").innerText = "Email already exists. Please choose another.";
+        }
+        else {
+            const fileInput = document.getElementById("image-upload");
+            const file = fileInput.files[0];
+
+            if (file) {
+                const imagePath = `assets/images/${email}_${file.name}`;
+
+                // Save the data URL as a link in the project directory
+                const preview = document.getElementById("image-preview");
+                const a = document.createElement('a');
+                a.href = preview.src;
+                a.download = imagePath;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                console.log("sign up ho gya")
+                // Add the new user to the fetched JSON data with the image path
+                userData.push({ name, email, password, image: imagePath });
+                this.showSuccessMessage("Registration successful. Please log in.");
+            } else {
+                this.showErrorMessage(fileInput, "Please upload an image.");
+            }
+        }
     }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    let userData; // Declare userData variable
+
+    // Fetch USER DATA
+    fetch('/assets/json/user.json')
+        .then(response => response.json())
+        .then(data => {
+            userData = data; // Assign fetched data to userData
+
+            // Instantiate LoginForm with userData
+            const loginForm = new LoginForm(userData);
+            loginForm.initForms();
+            loginForm.initialize();
+        })
+        .catch(error => console.error('Error fetching JSON:', error));
+});
