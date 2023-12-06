@@ -12,35 +12,32 @@ body {
     flex-direction: column;
     font-family: 'Montserrat', sans-serif;
     height: 90vh;
-    margin: -20px 0 50px;
+    margin: 0 0 50px;
 }
 
 h1 {
+    font-size: 2vw;
     font-weight: bold;
     margin: 0;
 }
 
-h2 {
-    text-align: center;
-}
-
 p {
-    font-size: 14px;
+    font-size: 0.9vw;
     font-weight: 100;
-    line-height: 20px;
+    line-height: 1.3vw;
     letter-spacing: 0.5px;
-    margin: 20px 0 30px;
+    margin: 1.5vw 0 3vw;
 }
 
 span {
-    font-size: 12px;
+    font-size: .8vw;
 }
 
 a {
     color: #333;
-    font-size: 14px;
+    font-size: .9vw;
     text-decoration: none;
-    margin: 15px 0;
+    margin: .95vw 0;
 }
 
 button {
@@ -48,9 +45,9 @@ button {
     border: 1px solid #000;
     background-color: #000;
     color: #FFFFFF;
-    font-size: 12px;
+    font-size: .8vw;
     font-weight: bold;
-    padding: 12px 45px;
+    padding: .8vw 2.8vw;
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: transform 80ms ease-in;
@@ -95,7 +92,7 @@ form {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 50px;
+    padding: 0 3vw;
     height: 100%;
     text-align: center;
 }
@@ -103,9 +100,10 @@ form {
 input {
     background-color: #eee;
     border: none;
-    padding: 12px 15px;
-    margin: 8px 0;
+    padding: .8vw .95vw;
+    margin: .5vw 0;
     width: 100%;
+    border-radius: 12px;
 }
 
 .container {
@@ -115,9 +113,8 @@ input {
         0 10px 10px rgba(0, 0, 0, 0.22);
     position: relative;
     overflow: hidden;
-    width: 768px;
-    max-width: 100%;
-    min-height: 480px;
+    width: 60%;
+    height: 90%;
 }
 
 .form-container {
@@ -210,7 +207,7 @@ input {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 40px;
+    padding: 0 2.5vw;
     text-align: center;
     top: 0;
     height: 100%;
@@ -237,7 +234,7 @@ input {
 }
 
 .social-container {
-    margin: 20px 0;
+    margin: 1.25vw 0;
 }
 
 .social-container a {
@@ -247,8 +244,8 @@ input {
     justify-content: center;
     align-items: center;
     margin: 0 5px;
-    height: 40px;
-    width: 40px;
+    height: 2.5vw;
+    width: 2.5vw;
 }
 
 .social-container a:hover {
@@ -260,14 +257,11 @@ input {
     transition: all 300ms linear;
 }
 
-
-
-/* Added styles for error and success elements */
-.error-sign-up,
-.error-sign-in {
-    color: #FF4B2B;
-    font-size: 12px;
-    margin-top: 5px;
+.success-message,
+.successMessage {
+    color: #ff322b;
+    font-size: 0.75vw;
+    margin: 5px;
 }
 
 input[type=file] {
@@ -289,6 +283,250 @@ input[type=file]::file-selector-button {
 
 input[type=file]::file-selector-button:hover {
     background-color: transparent;
-    border: 2px solid #000;
+    border: 1px solid #000;
     color: #000;
+}
+
+@media only screen and (min-width: 1800px) {
+
+    h1 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+        margin: 20px 0 30px;
+    }
+
+    span {
+        font-size: 12px;
+    }
+
+    a {
+        font-size: 14px;
+        margin: 15px 0;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 12px 40px;
+    }
+
+    form {
+        padding: 0 45px;
+    }
+
+    input {
+        padding: 12px 15px;
+        margin: 8px 0;
+    }
+
+    .container {
+        width: 1200px;
+        height: 800px;
+    }
+
+    .overlay-panel {
+        padding: 0 30px;
+    }
+
+    .social-container {
+        margin: 20px 0;
+    }
+
+    .social-container a {
+        height: 30px;
+        width: 30px;
+    }
+
+    /* Added styles for error and success elements */
+
+    .success-message,
+    .successMessage {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 1800px) {
+
+    h1 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+        margin: 20px 0 30px;
+    }
+
+    span {
+        font-size: 12px;
+    }
+
+    a {
+        font-size: 14px;
+        margin: 15px 0;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 12px 40px;
+    }
+
+    input {
+        padding: 12px 15px;
+        margin: 8px 0;
+    }
+
+    .container {
+        width: 1000px;
+        height: 700px;
+    }
+
+    .overlay-panel {
+        padding: 0 30px;
+    }
+
+    .social-container {
+        margin: 20px 0;
+    }
+
+    .social-container a {
+        height: 30px;
+        width: 30px;
+    }
+
+    /* Added styles for error and success elements */
+
+    .success-message,
+    .successMessage {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    body {
+        height: 92vh;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    p {
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0.5px;
+        margin: 16px 0 25px;
+    }
+
+    span {
+        font-size: 10px;
+    }
+
+    a {
+        font-size: 12px;
+        margin: 12px 0;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 8px 30px;
+    }
+
+    form {
+        padding: 0 40px;
+    }
+
+    .container {
+        width: 768px;
+        height: 600px;
+    }
+
+    .overlay-panel {
+        padding: 0 30px;
+    }
+
+    .social-container {
+        margin: 5px 0;
+    }
+
+    .social-container a {
+        height: 25px;
+        width: 25px;
+    }
+
+    /* Added styles for error and success elements */
+
+    .success-message,
+    .successMessage {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    h1 {
+        font-size: 3.5vw;
+    }
+
+    p {
+        font-size: 2vw;
+        line-height: 2.5vw;
+        letter-spacing: 0.5px;
+        margin: 1.5vw 0 3vw;
+    }
+
+    span {
+        font-size: 1.5vw;
+    }
+
+    a {
+        font-size: 1.8vw;
+        margin: 1.5vw 0;
+    }
+
+    button {
+        font-size: 1.8vw;
+        padding: 1.2vw 4vw;
+    }
+
+    form {
+        padding: 0 4vw;
+    }
+
+    input {
+        padding: 1vw 1.5vw;
+        margin: .8vw 0;
+        font-size: 1.8vw;
+    }
+
+    .container {
+        width: 90vw;
+        height: 78vh;
+    }
+
+    .overlay-panel {
+        padding: 0 3.5vw;
+    }
+
+    .social-container {
+        margin: 2vw 0;
+    }
+
+    .social-container a {
+        height: 30px;
+        width: 30px;
+    }
+
+    /* Added styles for error and success elements */
+
+    .success-message,
+    .successMessage {
+        font-size: 2vw;
+    }
 }
