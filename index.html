@@ -606,18 +606,22 @@ z" />
 	</div>
 
 	<div class="login-box" id="login">
-		<div class="box-header">
-			<button class="close" onclick="closeForm()">&times;</button>
-		</div>
 		<div class="box-content">
 			<iframe src="./login.html" frameborder="0"></iframe>
 		</div>
 	</div>
 
-	<div class="signInPopup">
+	<div class="signInPopup" id="signInPopup">
 		<div class="popup-wrapper">
 			<p id="resultParagraph"></p>
-			<button onclick="closePopup()">OK</button>
+			<button class="popUpButton">OK</button>
+		</div>
+	</div>
+
+	<div class="popup" id="logoutPopup">
+		<div class="popup-wrapper">
+			<p id="logoutResultParagraph"></p>
+			<button class="logoutButton">OK</button>
 		</div>
 	</div>
 
