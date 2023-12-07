@@ -258,17 +258,15 @@ input {
 }
 
 .success-message,
-.successMessage {
-    color: #ff322b;
-    font-size: 0.75vw;
-    margin: 5px;
-}
-
+.successMessage,
+.error-sign-in,
 .error-sign-up {
     color: #ff322b;
     font-size: 0.75vw;
     margin: 5px;
 }
+
+
 
 input[type=file] {
     border: none;
@@ -350,10 +348,8 @@ input[type=file]::file-selector-button:hover {
     /* Added styles for error and success elements */
 
     .success-message,
-    .successMessage {
-        font-size: 12px;
-    }
-
+    .successMessage,
+    .error-sign-in,
     .error-sign-up {
         font-size: 12px;
     }
@@ -412,10 +408,8 @@ input[type=file]::file-selector-button:hover {
     /* Added styles for error and success elements */
 
     .success-message,
-    .successMessage {
-        font-size: 12px;
-    }
-
+    .successMessage,
+    .error-sign-in,
     .error-sign-up {
         font-size: 12px;
     }
@@ -483,10 +477,8 @@ input[type=file]::file-selector-button:hover {
     /* Added styles for error and success elements */
 
     .success-message,
-    .successMessage {
-        font-size: 10px;
-    }
-
+    .successMessage,
+    .error-sign-in,
     .error-sign-up {
         font-size: 10px;
     }
@@ -550,10 +542,8 @@ input[type=file]::file-selector-button:hover {
     /* Added styles for error and success elements */
 
     .success-message,
-    .successMessage {
-        font-size: 2vw;
-    }
-
+    .successMessage,
+    .error-sign-in,
     .error-sign-up {
         font-size: 2vw;
     }
