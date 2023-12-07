@@ -192,21 +192,47 @@ class LoginForm {
         }
     }
 
+    resetForm() {
+        // Reset sign-up form fields
+        this.nameInput.value = '';
+        this.emailInputSignUp.value = '';
+        this.passwordInputSignUp.value = '';
+        this.confirmPasswordInput.value = '';
+
+        // Reset sign-in form fields
+        this.emailInputSignIn.value = '';
+        this.passwordInputSignIn.value = '';
+
+        // Clear any error messages
+        document.querySelector(".error-sign-up").innerText = "";
+        document.querySelector(".error-sign-in").innerText = "";
+
+        // Clear image preview
+        document.getElementById("image-preview").src = "#";
+        document.getElementById("image-upload").value = "";
+    }
+
+
     signIn() {
         const username = document.getElementById("email-sign-in").value;
         const password = document.getElementById("password-sign-in").value;
 
+        // 
         // Check if the user exists in the fetched JSON data
-        const user = this.userData.find(u => u.email === username && u.password === password);
+        let user = this.userData.find(u => u.email === username && u.password === password);
 
         if (user) {
-            document.getElementById("resultParagraph").innerText = `Login successful. Welcome, ${user.name}!`;
-            document.querySelector(".signInPopup").style.display = "flex";
-            document.getElementById("userName").innerText = user.name;
-            document.getElementById("userImage").src = user.image;
+            // Store the user data in localStorage
+            localStorage.setItem("user", JSON.stringify(user));
+
+            // Send a message to the parent window
+            window.parent.postMessage({ type: "userLoggedIn", user }, "*");
+
+            // Reset the form after successful sign-in
+            this.resetForm();
+
         } else {
-            document.getElementById("resultParagraph").innerText = "User not found. Please sign up.";
-            document.querySelector(".signInPopup").style.display = "flex";
+            document.querySelector(".error-sign-in").innerText = "User not found. Please sign up.";
         }
     }
 
@@ -243,10 +269,12 @@ class LoginForm {
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
-                console.log("sign up ho gya")
                 // Add the new user to the fetched JSON data with the image path
                 userData.push({ name, email, password, image: imagePath });
                 this.showSuccessMessage("Registration successful. Please log in.");
+
+                // Reset the form after successful registration
+                this.resetForm();
             } else {
                 this.showErrorMessage(fileInput, "Please upload an image.");
             }
@@ -256,7 +284,6 @@ class LoginForm {
 
 document.addEventListener('DOMContentLoaded', function () {
     let userData; // Declare userData variable
-
     // Fetch USER DATA
     fetch('/assets/json/user.json')
         .then(response => response.json())
