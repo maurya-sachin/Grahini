@@ -54,16 +54,20 @@ function processData(menuData) {
                     console.error(`Missing 'image' property for item in category: ${category}`);
                 }
 
+                const layerDiv = document.createElement('div');
+                layerDiv.className = 'layer';
+                itemDiv.appendChild(layerDiv);
+
                 // Set the dish name in item::before
                 const beforeDiv = document.createElement('div');
                 beforeDiv.className = 'before';
                 beforeDiv.textContent = item.name;
-                itemDiv.appendChild(beforeDiv);
+                layerDiv.appendChild(beforeDiv);
 
                 // Set the description in the item
                 const descriptionDiv = document.createElement('div');
                 descriptionDiv.textContent = item.description;
-                itemDiv.appendChild(descriptionDiv);
+                layerDiv.appendChild(descriptionDiv);
 
                 animationWrap.appendChild(itemDiv);
             });
