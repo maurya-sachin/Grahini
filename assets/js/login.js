@@ -219,9 +219,15 @@ class LoginForm {
 
         // 
         // Check if the user exists in the fetched JSON data
-        let user = this.userData.find(u => u.email === username && u.password === password);
+        let userFromData = this.userData.find(u => u.email === username && u.password === password);
 
-        if (user) {
+        // Check if the user exists in local storage
+        let userFromLocalStorage = JSON.parse(localStorage.getItem('users'))?.find(u => u.email === username && u.password === password);
+
+        if (userFromData || userFromLocalStorage) {
+            // Use the user from the fetched JSON data if available, otherwise use the one from local storage
+            let user = userFromData || userFromLocalStorage;
+
             // Store the user data in localStorage
             localStorage.setItem("user", JSON.stringify(user));
 
@@ -259,7 +265,7 @@ class LoginForm {
             const file = fileInput.files[0];
 
             if (file) {
-                const imagePath = `assets/images/${email}_${file.name}`;
+                const imagePath = `/assets/images/${file.name}`;
 
                 // Save the data URL as a link in the project directory
                 const preview = document.getElementById("image-preview");
@@ -269,9 +275,16 @@ class LoginForm {
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
-                // Add the new user to the fetched JSON data with the image path
-                userData.push({ name, email, password, image: imagePath });
-                this.showSuccessMessage("Registration successful. Please log in.");
+
+                const newUser = { "name": name, "email": email, "password": password, "image": imagePath };
+                // Save new user to local storage
+                const localStorageUsers = JSON.parse(localStorage.getItem('users')) || [];
+                localStorageUsers.push(newUser);
+                localStorage.setItem('users', JSON.stringify(localStorageUsers));
+                console.log('Data in Local Storage:', localStorageUsers[localStorageUsers.length - 1]);
+
+                // Send a message to the parent window
+                window.parent.postMessage({ type: "userRegistered", user: newUser }, "*");
 
                 // Reset the form after successful registration
                 this.resetForm();
@@ -280,6 +293,7 @@ class LoginForm {
             }
         }
     }
+
 }
 
 document.addEventListener('DOMContentLoaded', function () {
