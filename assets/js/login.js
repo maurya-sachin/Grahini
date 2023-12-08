@@ -30,6 +30,15 @@ class LoginForm {
         this.emailInputSignIn.addEventListener('input', () => this.handleInputValidation(this.emailInputSignIn));
         this.passwordInputSignIn.addEventListener('input', () => this.handleInputValidation(this.passwordInputSignIn));
 
+        // Add keydown event listener for Enter key on input fields
+        this.nameInput.addEventListener('keydown', (e) => this.handleEnterKey(e, this.handleSignUpButtonClick.bind(this)));
+        this.emailInputSignUp.addEventListener('keydown', (e) => this.handleEnterKey(e, this.handleSignUpButtonClick.bind(this)));
+        this.passwordInputSignUp.addEventListener('keydown', (e) => this.handleEnterKey(e, this.handleSignUpButtonClick.bind(this)));
+        this.confirmPasswordInput.addEventListener('keydown', (e) => this.handleEnterKey(e, this.handleSignUpButtonClick.bind(this)));
+
+        this.emailInputSignIn.addEventListener('keydown', (e) => this.handleEnterKey(e, this.handleSignInButtonClick.bind(this)));
+        this.passwordInputSignIn.addEventListener('keydown', (e) => this.handleEnterKey(e, this.handleSignInButtonClick.bind(this)));
+
         // Event listener for image preview
         document.getElementById("image-upload").addEventListener('change', this.previewImage.bind(this));
     }
@@ -63,6 +72,17 @@ class LoginForm {
         e.preventDefault()
         if (this.validateSignInForm()) {
             this.signIn();
+        }
+    }
+
+    handleEnterKey(event, callback) {
+        // Check if the pressed key is Enter (key code 13)
+        if (event.key === 'Enter') {
+            // Prevent the default action of the Enter key (e.g., form submission)
+            event.preventDefault();
+
+            // Call the provided callback function
+            callback(event);
         }
     }
 
@@ -310,4 +330,16 @@ document.addEventListener('DOMContentLoaded', function () {
             loginForm.initialize();
         })
         .catch(error => console.error('Error fetching JSON:', error));
+
+
+    // Add keydown event listener for Enter key on the entire document
+    document.addEventListener('keydown', function (e) {
+        // Check if the pressed key is Enter (key code 13)
+        if (e.key === 'Enter') {
+            // Trigger the click event on the focused element (if it's a button or a clickable element)
+            if (document.activeElement.tagName === 'BUTTON' || document.activeElement.onclick) {
+                document.activeElement.click();
+            }
+        }
+    });
 });
