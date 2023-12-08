@@ -39,6 +39,25 @@ body {
     /* Hide scrollbar initially */
 }
 
+#cursor {
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 500;
+}
+
+#cursorbck {
+    height: 450px;
+    width: 450px;
+    background-color: #f0e68c4b;
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(40px);
+    z-index: 1;
+}
+
 
 a {
     text-decoration: none;
@@ -498,14 +517,24 @@ section.horizontal {
     padding: 0;
 }
 
+.content-container .blank {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 section h1 {
-    margin: 0;
-    padding: 50px 0 0 50px;
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    padding-top: 100px;
 }
 
 section p {
-    margin: 0;
-    padding: 50px 0 50px 50px;
+    text-align: center;
+    font-size: 2px;
+    background-color: #fdec6e;
 }
 
 section {
@@ -516,7 +545,7 @@ section {
 }
 
 section.horizontal {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 section.horizontal .pin-wrap,
@@ -525,37 +554,60 @@ section.horizontal .animation-wrap {
     position: relative;
     z-index: 1;
     height: 100vh;
+    padding-top: 5vw;
 }
 
 
 section.horizontal .item {
+    margin: 15px;
     position: relative;
-    padding: 150px 80px;
     flex: 0 0 500px;
-    height: calc(100vh - 300px);
+    height: calc(100vh - 14vw);
+    display: flex;
+    align-items: center;
+    border-right: 1px solid rgba(255, 254, 254, 0.514);
+    border-radius: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+section.horizontal .item .layer {
+    position: absolute;
+    padding: 0 80px;
+    flex: 0 0 500px;
+    height: 0;
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #f0e68c);
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    row-gap: 1vw;
     line-height: 1.7;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border-right: 1px solid rgba(0, 0, 0, 0.06);
-    background-color: transparent;
+    transition: height 0.5s;
+    border-radius: 20px;
 }
 
-section.horizontal .item .before {
-    position: absolute;
-    font-size: 24px;
+section.horizontal .item:hover .layer {
+    text-align: center;
+    height: 100%;
+}
+
+section.horizontal .item .layer .before {
+    font-size: 40px;
     font-weight: bold;
-    color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    z-index: -1;
-    -webkit-transform: translate(-30px, -50px);
-    transform: translate(-30px, -50px);
-    line-height: 1;
-    opacity: .13;
+}
+
+section.horizontal .item .layer .before+div {
+    font-size: 18px;
+    font-weight: normal;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: var(--text);
 }
 
 section.horizontal .item:before {
@@ -571,11 +623,11 @@ section.horizontal .animation-wrap.to-right {
 }
 
 section.horizontal .animation-wrap.to-left {
-    counter-reset: item 11;
+    counter-reset: item 10;
     float: right;
 }
 
-section.horizontal .animation-wrap.to-right .item .before {
+section.horizontal .animation-wrap.to-right .item .layer .before {
     counter-increment: item;
     /* content: counter(item); */
 }
@@ -602,6 +654,8 @@ footer {
     background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(237, 3, 32, 0.87) 20.8%, rgba(242, 121, 1, 0.84) 74.4%);
     overflow: hidden;
     color: black;
+    position: relative;
+    z-index: 2;
 }
 
 .footer-top {
@@ -609,11 +663,15 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .footer-top a {
     text-decoration: none;
     color: #000;
+    position: relative;
+    z-index: 2;
 }
 
 .footer-top .logo {
@@ -737,6 +795,8 @@ footer {
     display: flex;
     align-items: center;
     column-gap: 5px;
+    position: relative;
+    z-index: 2;
 }
 
 .footer-center .address .contact img {
@@ -771,6 +831,8 @@ footer {
     font-family: var(--text);
     background-color: #00000048;
     padding: 1vw 0;
+    position: relative;
+    z-index: 2;
 }
 
 .footer-bottom h1 {
@@ -788,7 +850,7 @@ footer {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     left: 0;
     top: 0;
     width: 100%;

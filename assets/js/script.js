@@ -1,5 +1,15 @@
 // Wait for the DOM content to be fully loaded before executing the code
 document.addEventListener("DOMContentLoaded", function () {
+
+  var cursr = document.querySelector("#cursor")
+  var cursrbck = document.querySelector("#cursorbck")
+  document.addEventListener("mousemove", function (position) {
+    cursr.style.left = position.x + 15 + "px"
+    cursr.style.top = position.y + "px"
+    cursrbck.style.left = position.x - 225 + "px"
+    cursrbck.style.top = position.y - 225 + "px"
+  })
+
   // Get the preloader and container elements
   let preloader = document.getElementById("preloader");
   let container = document.querySelector(".container");
@@ -102,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+
   // Section horizontal scroll
   const horizontalSections = gsap.utils.toArray('section.horizontal');
 
@@ -118,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ease: "none",
       scrollTrigger: {
         trigger: sec,
-        start: "top top+=100",
+        start: "top top+=0",
         end: () => "+=" + (thisAnimWrap.scrollWidth - window.innerWidth),
         pin: thisPinWrap,
         invalidateOnRefresh: true,
