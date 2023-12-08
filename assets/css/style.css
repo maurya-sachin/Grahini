@@ -534,6 +534,7 @@ section.horizontal .item {
     flex: 0 0 500px;
     height: calc(100vh - 300px);
     display: flex;
+    flex-direction: column;
     align-items: center;
     line-height: 1.7;
     -webkit-user-select: none;
@@ -544,15 +545,21 @@ section.horizontal .item {
     background-color: transparent;
 }
 
-section.horizontal .item:before {
+section.horizontal .item .before {
     position: absolute;
-    font-size: 100px;
-    opacity: .13;
+    font-size: 24px;
     font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     z-index: -1;
     -webkit-transform: translate(-30px, -50px);
     transform: translate(-30px, -50px);
     line-height: 1;
+    opacity: .13;
+}
+
+section.horizontal .item:before {
+    content: '';
 }
 
 
@@ -568,14 +575,14 @@ section.horizontal .animation-wrap.to-left {
     float: right;
 }
 
-section.horizontal .animation-wrap.to-right .item:before {
+section.horizontal .animation-wrap.to-right .item .before {
     counter-increment: item;
-    content: counter(item);
+    /* content: counter(item); */
 }
 
 section.horizontal .animation-wrap.to-left .item:before {
     counter-increment: item -1;
-    content: counter(item);
+    /* content: counter(item); */
 }
 
 
