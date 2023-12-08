@@ -286,6 +286,11 @@ document.addEventListener("DOMContentLoaded", function () {
       openPopup();
       document.getElementById("userName").innerText = user.name;
       document.getElementById("userImage").src = user.image;
+    } else {
+      const user = event.data.user;
+      document.getElementById("resultParagraph").innerText = `Sign Up Successful. Welcome, ${user.name}!,
+      Please Log In`;
+      openPopup();
     }
   }
 });
