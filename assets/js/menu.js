@@ -88,26 +88,40 @@ function processData(menuData) {
     // Get the content container
     const contentContainer = document.querySelector('.content-container');
 
-    // Iterate through each category in the menu
-    for (const category in menuData) {
-        if (menuData.hasOwnProperty(category)) {
-            const items = menuData[category];
+    // Get an array of category names
+    const categories = Object.keys(menuData);
 
-            // Create horizontal section with wrap to right
-            const horizontalSectionRight = createHorizontalSection(category, items, true);
-            contentContainer.appendChild(horizontalSectionRight);
+    // Iterate through every other category in the menu
+    for (let i = 0; i < categories.length; i += 2) {
+        const category = categories[i];
+        const items = menuData[category];
 
-            // Create blank section
-            const blankSection = createBlankSection(category);
-            contentContainer.appendChild(blankSection);
+        // Create blank section
+        const blankSection = createBlankSection(category);
+        contentContainer.appendChild(blankSection);
+
+        // Create horizontal section with wrap to right
+        const horizontalSectionRight = createHorizontalSection(category, items, true);
+        contentContainer.appendChild(horizontalSectionRight);
+
+        // Move to the next category (if available)
+        const nextCategoryIndex = i + 1;
+        if (nextCategoryIndex < categories.length) {
+            const nextCategory = categories[nextCategoryIndex];
+
+            // Create blank section of the next category
+            const blankSectionAfterRight = createBlankSection(nextCategory);
+            contentContainer.appendChild(blankSectionAfterRight);
 
             // Create horizontal section with wrap to left
-            const horizontalSectionLeft = createHorizontalSection(category, items, false);
+            const horizontalSectionLeft = createHorizontalSection(nextCategory, menuData[nextCategory], false);
             contentContainer.appendChild(horizontalSectionLeft);
-
-            // Create blank section
-            const blankSectionAfterLeft = createBlankSection(category);
-            contentContainer.appendChild(blankSectionAfterLeft);
         }
     }
+
+    // Custom blank section after the loop
+    const customBlankSection = document.createElement('section');
+    customBlankSection.className = 'blank';
+    customBlankSection.innerHTML = '<h1>Please Visit Us Again</h1><p>...</p>';
+    contentContainer.appendChild(customBlankSection);
 }
