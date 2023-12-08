@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       // If user is not logged in
       loginButton.innerText = "Login/Sign Up";
-      document.getElementById("userName").innerText = "Admin";
+      document.getElementById("userName").innerText = "User";
       document.getElementById("userImage").src = "/assets/images/user.png";
     }
   }
@@ -187,9 +187,6 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {
       logoutPopup.style.display = "none";
     }, 500);
-
-    // Refresh the page
-    window.location.reload();
   }
 
   document.querySelector(".logoutButton").addEventListener("click", closeLogoutPopup);
@@ -282,15 +279,35 @@ document.addEventListener("DOMContentLoaded", function () {
   function receiveMessage(event) {
     if (event.data && event.data.type === "userLoggedIn") {
       const user = event.data.user;
-      document.getElementById("resultParagraph").innerText = `Login successful. Welcome, ${user.name}!`;
-      openPopup();
-      document.getElementById("userName").innerText = user.name;
-      document.getElementById("userImage").src = user.image;
-    } else {
+
+      // Check if the user object is defined before accessing its properties
+      if (user) {
+        const userName = user.name || "User"; // Provide a default value if 'name' is undefined
+        const userImage = user.image || "/assets/images/user.png"; // Provide a default image if 'image' is undefined
+
+        document.getElementById("resultParagraph").innerText = `Login successful. Welcome, ${userName}!`;
+        openPopup();
+        document.getElementById("userName").innerText = userName;
+        document.getElementById("userImage").src = userImage;
+      } else {
+        console.error("Received message without a valid user object:", event.data);
+      }
+    } else if (event.data && event.data.type === "userRegistered") {
       const user = event.data.user;
-      document.getElementById("resultParagraph").innerText = `Sign Up Successful. Welcome, ${user.name}!,
-      Please Log In`;
-      openPopup();
+
+      // Check if the user object is defined before accessing its properties
+      if (user) {
+        const userName = user.name || "User"; // Provide a default value if 'name' is undefined
+        const userImage = user.image || "/assets/images/user.png"; // Provide a default image if 'image' is undefined
+
+        document.getElementById("resultParagraph").innerHTML = `Sign Up Successful. Welcome, ${userName}!</br> Please Log In`;
+        openPopup();
+        document.getElementById("userName").innerText = userName;
+        document.getElementById("userImage").src = userImage;
+      } else {
+        console.error("Received message without a valid user object:", event.data);
+      }
     }
   }
+
 });
