@@ -1,12 +1,262 @@
-[{
-    "name": "Pizza",
-    "price": 6.50
-},
 {
-    "name": "Mango",
-    "price": 1.00
-},
-{
-    "name": "Chocolate",
-    "price": 3.00
-}]
+    "dinner": [
+        {
+            "name": "Paneer Butter Masala",
+            "description": "Soft paneer cubes in a rich and creamy tomato-based curry.",
+            "image": "/assets/images/dishes/paneer_butter_masala.jpg"
+        },
+        {
+            "name": "Aloo Gobi",
+            "description": "Potatoes and cauliflower cooked with spices and herbs.",
+            "image": "/assets/images/dishes/aloo_gobi.jpg"
+        },
+        {
+            "name": "Vegetable Korma",
+            "description": "Mixed vegetables in a flavorful and aromatic coconut-based curry.",
+            "image": "/assets/images/dishes/dishes/vegetable_korma.jpg"
+        },
+        {
+            "name": "Palak Paneer",
+            "description": "Paneer cubes cooked in a flavorful spinach curry.",
+            "image": "/assets/images/dishes/palak_paneer.jpg"
+        },
+        {
+            "name": "Matar Paneer",
+            "description": "Peas and paneer in a spiced tomato-based curry.",
+            "image": "/assets/images/dishes/matar_paneer.jpg"
+        },
+        {
+            "name": "Dal Tadka",
+            "description": "Yellow lentils tempered with spices and herbs.",
+            "image": "/assets/images/dishes/dal_tadka.jpg"
+        },
+        {
+            "name": "Bhindi Masala",
+            "description": "Okra cooked with onions, tomatoes, and spices.",
+            "image": "/assets/images/dishes/bhindi_masala.jpg"
+        },
+        {
+            "name": "Chana Masala",
+            "description": "Spiced chickpeas in a thick tomato-based curry.",
+            "image": "/assets/images/dishes/chana_masala.jpg"
+        },
+        {
+            "name": "Mixed Veg Curry",
+            "description": "Assorted vegetables in a flavorful curry sauce.",
+            "image": "/assets/images/dishes/mixed_veg_curry.jpg"
+        },
+        {
+            "name": "Vegetable Jalfrezi",
+            "description": "Mixed vegetables sautéed with spices and herbs.",
+            "image": "/assets/images/dishes/vegetable_jalfrezi.jpg"
+        }
+    ],
+    "lunch": [
+        {
+            "name": "Chole Bhature",
+            "description": "Spiced chickpeas served with deep-fried bread (bhature).",
+            "image": "/assets/images/dishes/chole_bhature.jpg"
+        },
+        {
+            "name": "Rajma Chawal",
+            "description": "Red kidney beans in a thick tomato-based curry, served with rice.",
+            "image": "/assets/images/dishes/rajma_chawal.jpg"
+        },
+        {
+            "name": "Baingan Bharta",
+            "description": "Smoky-flavored mashed eggplant cooked with onions and tomatoes.",
+            "image": "/assets/images/dishes/baingan_bharta.jpg"
+        },
+        {
+            "name": "Dal Makhani",
+            "description": "Slow-cooked black lentils in a creamy and flavorful tomato-based curry.",
+            "image": "/assets/images/dishes/dal_makhani.jpg"
+        },
+        {
+            "name": "Vegetable Biryani",
+            "description": "Fragrant basmati rice cooked with spiced vegetables and aromatic herbs.",
+            "image": "/assets/images/dishes/vegetable_biryani.jpg"
+        },
+        {
+            "name": "Aloo Paratha",
+            "description": "Whole wheat flatbread stuffed with spiced mashed potatoes.",
+            "image": "/assets/images/dishes/aloo_paratha.jpg"
+        },
+        {
+            "name": "Spinach Rice",
+            "description": "Rice cooked with spinach and mild spices.",
+            "image": "/assets/images/dishes/spinach_rice.jpg"
+        },
+        {
+            "name": "Gobi Manchurian",
+            "description": "Crispy cauliflower florets in a sweet and tangy sauce.",
+            "image": "/assets/images/dishes/gobi_manchurian.jpg"
+        },
+        {
+            "name": "Mushroom Masala",
+            "description": "Mushrooms cooked in a rich and flavorful masala.",
+            "image": "/assets/images/dishes/mushroom_masala.jpg"
+        },
+        {
+            "name": "Cabbage Sabzi",
+            "description": "Cabbage stir-fried with spices and herbs.",
+            "image": "/assets/images/dishes/cabbage_sabzi.jpg"
+        }
+    ],
+    "snacks": [
+        {
+            "name": "Samosa",
+            "description": "Crispy pastry filled with spiced potatoes and peas.",
+            "image": "/assets/images/dishes/samosa.jpg"
+        },
+        {
+            "name": "Paneer Tikka",
+            "description": "Grilled marinated paneer cubes served with mint chutney.",
+            "image": "/assets/images/dishes/paneer_tikka.jpg"
+        },
+        {
+            "name": "Pav Bhaji",
+            "description": "Mixed vegetables in a spiced tomato-based curry, served with buttered pav (bread).",
+            "image": "/assets/images/dishes/pav_bhaji.jpg"
+        },
+        {
+            "name": "Dhokla",
+            "description": "Steamed fermented chickpea flour cake, typically served as a snack or breakfast.",
+            "image": "/assets/images/dishes/dhokla.jpg"
+        },
+        {
+            "name": "Bhel Puri",
+            "description": "A popular street food made with puffed rice, vegetables, and tangy chutneys.",
+            "image": "/assets/images/dishes/bhel_puri.jpg"
+        },
+        {
+            "name": "Masala Papad",
+            "description": "Crispy papad topped with chopped vegetables and spices.",
+            "image": "/assets/images/dishes/masala_papad.jpg"
+        },
+        {
+            "name": "Vada Pav",
+            "description": "Spiced potato dumpling sandwiched in a pav (bread) with chutneys.",
+            "image": "/assets/images/dishes/vada_pav.jpg"
+        },
+        {
+            "name": "Vegetable Spring Rolls",
+            "description": "Crispy rolls filled with spiced vegetables.",
+            "image": "/assets/images/dishes/vegetable_spring_rolls.jpg"
+        },
+        {
+            "name": "Corn Chaat",
+            "description": "Spiced corn kernels mixed with vegetables and chutneys.",
+            "image": "/assets/images/dishes/corn_chaat.jpg"
+        },
+        {
+            "name": "Aloo Tikki",
+            "description": "Crispy potato patties served with chutneys.",
+            "image": "/assets/images/dishes/aloo_tikki.jpg"
+        }
+    ],
+    "desserts": [
+        {
+            "name": "Gulab Jamun",
+            "description": "Soft and spongy milk solids balls soaked in sugar syrup.",
+            "image": "/assets/images/dishes/gulab_jamun.jpg"
+        },
+        {
+            "name": "Rasgulla",
+            "description": "Spongy cottage cheese balls soaked in sugar syrup.",
+            "image": "/assets/images/dishes/rasgulla.jpg"
+        },
+        {
+            "name": "Kheer",
+            "description": "Creamy rice pudding with cardamom and nuts.",
+            "image": "/assets/images/dishes/kheer.jpg"
+        },
+        {
+            "name": "Jalebi",
+            "description": "Deep-fried spiral-shaped sweets soaked in sugar syrup.",
+            "image": "/assets/images/dishes/jalebi.jpg"
+        },
+        {
+            "name": "Gajar ka Halwa",
+            "description": "Carrot pudding made with grated carrots, milk, and sugar.",
+            "image": "/assets/images/dishes/gajar_ka_halwa.jpg"
+        },
+        {
+            "name": "Malai Kulfi",
+            "description": "Creamy and rich frozen Indian dessert, similar to ice cream.",
+            "image": "/assets/images/dishes/malai_kulfi.jpg"
+        },
+        {
+            "name": "Rasmalai",
+            "description": "Soft cottage cheese patties in a sweet and creamy milk syrup.",
+            "image": "/assets/images/dishes/rasmalai.jpg"
+        },
+        {
+            "name": "Coconut Ladoo",
+            "description": "Sweet coconut balls made with condensed milk and coconut.",
+            "image": "/assets/images/dishes/coconut_ladoo.jpg"
+        },
+        {
+            "name": "Shahi Tukda",
+            "description": "Fried bread slices soaked in sweetened condensed milk.",
+            "image": "/assets/images/dishes/shahi_tukda.jpg"
+        },
+        {
+            "name": "Mango Srikhand",
+            "description": "Yogurt-based dessert with mango puree and spices.",
+            "image": "/assets/images/dishes/mango_srikhand.jpg"
+        }
+    ],
+    "drinks": [
+        {
+            "name": "Masala Chai",
+            "description": "Spiced tea with aromatic Indian spices.",
+            "image": "/assets/images/dishes/masala_chai.jpg"
+        },
+        {
+            "name": "Mango Lassi",
+            "description": "Refreshing yogurt-based drink with mango puree.",
+            "image": "/assets/images/dishes/mango_lassi.jpg"
+        },
+        {
+            "name": "Thandai",
+            "description": "Cooling drink made with milk, nuts, and aromatic spices.",
+            "image": "/assets/images/dishes/thandai.jpg"
+        },
+        {
+            "name": "Minty Lemonade",
+            "description": "Refreshing lemonade with a hint of mint.",
+            "image": "/assets/images/dishes/minty_lemonade.jpg"
+        },
+        {
+            "name": "Cucumber Cooler",
+            "description": "Cooling drink made with cucumber, mint, and spices.",
+            "image": "/assets/images/dishes/cucumber_cooler.jpg"
+        },
+        {
+            "name": "Rose Lassi",
+            "description": "Yogurt-based drink with a touch of rose flavor.",
+            "image": "/assets/images/dishes/rose_lassi.jpg"
+        },
+        {
+            "name": "Kokum Sherbet",
+            "description": "Refreshing and tangy drink made with kokum fruit.",
+            "image": "/assets/images/dishes/kokum_sherbet.jpg"
+        },
+        {
+            "name": "Buttermilk",
+            "description": "Refreshing and spiced yogurt-based drink.",
+            "image": "/assets/images/dishes/buttermilk.jpg"
+        },
+        {
+            "name": "Pomegranate Juice",
+            "description": "Freshly squeezed juice from ripe pomegranates.",
+            "image": "/assets/images/dishes/pomegranate_juice.jpg"
+        },
+        {
+            "name": "Rose Milk",
+            "description": "Cooling milk beverage flavored with rose syrup.",
+            "image": "/assets/images/dishes/rose_milk.jpg"
+        }
+    ]
+}
