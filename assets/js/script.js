@@ -1,8 +1,8 @@
 // Wait for the DOM content to be fully loaded before executing the code
 document.addEventListener("DOMContentLoaded", function () {
 
-  var cursr = document.querySelector("#cursor")
-  var cursrbck = document.querySelector("#cursorbck")
+  let cursr = document.querySelector("#cursor")
+  let cursrbck = document.querySelector("#cursorbck")
   document.addEventListener("mousemove", function (position) {
     cursr.style.left = position.x + 15 + "px"
     cursr.style.top = position.y + "px"
@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
     cursrbck.style.top = position.y - 225 + "px"
   })
 
+
   // Get the preloader and container elements
   let preloader = document.getElementById("preloader");
   let container = document.querySelector(".container");
   let intro = document.querySelector(".intro");
-
   // Hide the preloader after 3 seconds or when the page finishes loading
   setTimeout(function () {
     preloader.style.display = "none";
@@ -25,25 +25,20 @@ document.addEventListener("DOMContentLoaded", function () {
     intro.classList.add("animate-intro");
   }, 3000);
 
+
   // Get the header element
   let header = document.querySelector('.header');
-
   // Get the content-container element
   let contentContainer = document.querySelector('.content-container');
-
   const menuButton = document.querySelector('.menu');
   const sidebar = document.querySelector('.sidebar');
-
   let isHeaderVisible = false;
-
   // Add a scroll event listener to the window
   window.addEventListener('scroll', function () {
     // Get the current scroll position
     let scrollPosition = window.scrollY || window.pageYOffset;
-
     // Get the offset of the content-container from the top of the document
     let contentContainerOffset = contentContainer.offsetTop;
-
     // Check if the scroll position is greater than or equal to the content-container offset
     if (scrollPosition >= contentContainerOffset) {
       // If true, add the 'visible' class to the header
@@ -72,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+
   // Function to toggle the sidebar
   function toggleSidebar() {
     if (isHeaderVisible) {
@@ -89,21 +85,19 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add a click event listener to the menu button
   menuButton.addEventListener('click', toggleSidebar);
 
+
   let footer = document.querySelector('footer');
   let isContentVisible = false;
-
   window.addEventListener('scroll', function () {
     let scrollPosition = window.scrollY || window.pageYOffset;
     let contentContainerOffset = contentContainer.offsetTop;
     let footerOffset = footer.offsetTop;
-
     // Check if the scroll position is greater than or equal to the content-container offset
     if (scrollPosition >= contentContainerOffset) {
       isContentVisible = true;
     } else {
       isContentVisible = false;
     }
-
     // Adjust the sidebar opacity based on content visibility
     gsap.to(sidebar, {
       duration: 0.5,
@@ -115,11 +109,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Section horizontal scroll
   const horizontalSections = gsap.utils.toArray('section.horizontal');
-
   horizontalSections.forEach(function (sec, i) {
     let thisPinWrap = sec.querySelector('.pin-wrap');
     let thisAnimWrap = thisPinWrap.querySelector('.animation-wrap');
-
     let getToValue = () => -(thisAnimWrap.scrollWidth - window.innerWidth);
 
     gsap.fromTo(thisAnimWrap, {
@@ -134,9 +126,11 @@ document.addEventListener("DOMContentLoaded", function () {
         pin: thisPinWrap,
         invalidateOnRefresh: true,
         scrub: true,
+        touch: true,
       }
     });
   });
+
 
   // Add an event listener to the login/logout button
   const loginButton = document.querySelector(".login-button");
@@ -147,7 +141,6 @@ document.addEventListener("DOMContentLoaded", function () {
   updateLoginStatus(user);
 
   function toggleLoginLogout() {
-
     const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
       // If logged in, perform logout
@@ -158,8 +151,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  const logoutPopup = document.getElementById("logoutPopup");
 
+  const logoutPopup = document.getElementById("logoutPopup");
   function logout() {
     // Clear user data from localStorage
     localStorage.removeItem("user");
@@ -173,6 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Update UI to reflect logout
     updateLoginStatus(null);
   }
+
 
   function updateLoginStatus(user) {
     if (user) {
@@ -188,10 +182,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+
   function openLogoutPopup() {
     logoutPopup.style.display = "flex";
     logoutPopup.style.opacity = 1;
   }
+
 
   function closeLogoutPopup() {
     logoutPopup.style.opacity = 0;
@@ -202,10 +198,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.querySelector(".logoutButton").addEventListener("click", closeLogoutPopup);
 
-  var loginBoxVisible = false;
+
+  let loginBoxVisible = false;
 
   function toggleButtons() {
-    var loginBox = document.getElementById("login");
+    let loginBox = document.getElementById("login");
 
     if (loginBoxVisible) {
       // If login box is visible, hide it
@@ -233,15 +230,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+
   function openPopup() {
     let signInPopup = document.getElementById("signInPopup");
     signInPopup.style.display = "flex";
     signInPopup.style.opacity = 1;  // Set opacity immediately without delay
   }
 
+
   function closePopup() {
     let signInPopup = document.querySelector(".signInPopup");
-    var loginBox = document.getElementById("login");
+    let loginBox = document.getElementById("login");
     signInPopup.style.opacity = 0;
     setTimeout(function () {
       toggleButtons();
@@ -252,15 +251,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.querySelector(".popUpButton").addEventListener("click", closePopup);
 
-  // GO TO TOP
-  function goToTop() {
-    // Scroll to the top of the page with a smooth animation
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  }
-
   // Function to open the modal
   function openModal() {
     document.getElementById('disclaimerModal').style.display = 'block';
@@ -270,6 +260,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function closeModal() {
     document.getElementById('disclaimerModal').style.display = 'none';
   }
+
+  document.querySelector(".modalButton").addEventListener("click", openModal);
+  document.querySelector(".modalClose").addEventListener("click", closeModal);
 
   // Optional: Close the modal if the user clicks outside of it
   window.onclick = function (event) {
@@ -321,4 +314,56 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+});
+// GO TO TOP
+function goToTop() {
+  // Scroll to the top of the page with a smooth animation
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+// Add a scroll event listener to the window
+window.addEventListener('scroll', function () {
+  let scrollPosition = window.scrollY || window.pageYOffset;
+  let goToTopButton = document.getElementById('goToTopButton');
+
+  // Check if the scroll position is greater than a certain threshold (e.g., 500 pixels)
+  if (scrollPosition > 500) {
+    // If true, show the "Go to Top" button
+    goToTopButton.style.display = 'block';
+  } else {
+    // If false, hide the "Go to Top" button
+    goToTopButton.style.display = 'none';
+  }
+});
+
+// Get all sidebar links
+const sidebarLinks = document.querySelectorAll('.sidebar a');
+
+// Add click event listeners to each link
+sidebarLinks.forEach(link => {
+  link.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    // Get the category from the data attribute
+    const category = this.getAttribute('data-category');
+
+    // Find the corresponding blank section
+    const blankSections = document.querySelectorAll('.blank h1');
+
+    // Iterate through the sections to find the one that contains the category
+    let targetBlankSection;
+    blankSections.forEach(section => {
+      if (section.textContent.includes(category)) {
+        targetBlankSection = section;
+      }
+    });
+
+    // Scroll to the blank section
+    if (targetBlankSection) {
+      targetBlankSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
 });

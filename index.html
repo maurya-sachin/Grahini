@@ -602,12 +602,11 @@ z" />
 	</div>
 
 	<div class="sidebar">
-		<a href="#">Dinner</a>
-		<a href="#">Dinner</a>
-		<a href="#">Dinner</a>
-		<a href="#">Dinner</a>
-		<a href="#">Dinner</a>
-		<a href="#">Dinner</a>
+		<a href="#" data-category="dinner">Dinner</a>
+		<a href="#" data-category="lunch">Lunch</a>
+		<a href="#" data-category="snacks">Snacks</a>
+		<a href="#" data-category="desserts">Desserts</a>
+		<a href="#" data-category="drinks">Drinks</a>
 	</div>
 
 	<div class="login-box" id="login">
@@ -671,7 +670,7 @@ z" />
 						<img src="./assets/images/cutlery.png" alt="logo">
 					</div>
 				</a>
-				<button onclick="goToTop()"><span>&uarr;</span></button>
+				<button id="goToTopButton" onclick="goToTop()"><span>&uarr;</span></button>
 			</div>
 
 			<div class="footer-center">
@@ -707,10 +706,10 @@ z" />
 
 			<div class="footer-bottom">
 				<h1>Disclaimer</h1>
-				<p>By using our website, you agree to this <span onclick="openModal()">disclaimer</span>.</p>
+				<p>By using our website, you agree to this <span class="modalButton">disclaimer</span>.</p>
 				<div class="modal" id="disclaimerModal">
 					<div class="modal-content">
-						<span class="close" onclick="closeModal()">&times;</span>
+						<span class="modalClose close"">&times;</span>
 						<h2>Disclaimer</h2>
 						<p>
 							1. Product Information: Details on our website, including ingredients and allergen info, are
@@ -732,11 +731,11 @@ z" />
 							<br>
 							7. Delivery: Timelines may vary due to unforeseen circumstances.
 							<br>
-							8. Returns and Refunds: Our <a href="#" target="_blank">Terms of Service</a> detail our
+							8. Returns and Refunds: Our <a href=" #" target="_blank">Terms of Service</a> detail our
 							return and refund policy.
 							<br><br>
 							By using our website, you agree to this disclaimer.
-						</p>
+							</p>
 					</div>
 				</div>
 			</div>
@@ -747,6 +746,7 @@ z" />
 	<!-- Load custom JavaScript file for additional scripting -->
 	<script src="./assets/js/script.js"></script>
 	<script src="./assets/js/login.js"></script>
+
 </body>
 
 </html>
