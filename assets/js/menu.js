@@ -64,10 +64,41 @@ function processData(menuData) {
                 beforeDiv.textContent = item.name;
                 layerDiv.appendChild(beforeDiv);
 
-                // Set the description in the item
+                // Set the description and price in the item
                 const descriptionDiv = document.createElement('div');
-                descriptionDiv.textContent = item.description;
+                descriptionDiv.textContent = `${item.description}`;
                 layerDiv.appendChild(descriptionDiv);
+
+                // Set the description and price in the item
+                const priceDiv = document.createElement('div');
+                priceDiv.className = 'priceDiv';
+                priceDiv.textContent = `$${item.price.toFixed(2)}`;
+                layerDiv.appendChild(priceDiv);
+
+                // Set the description and price in the item
+                const buttonDiv = document.createElement('div');
+                buttonDiv.className = 'buttonDiv';
+                layerDiv.appendChild(buttonDiv);
+
+                // Add to cart button
+                const addToCartButton = document.createElement('button');
+                addToCartButton.textContent = 'Add to Cart';
+                buttonDiv.appendChild(addToCartButton);
+
+                // Add a button to delete the item from the cart
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Remove from Cart';
+                deleteButton.style.display = 'none';
+                buttonDiv.appendChild(deleteButton);
+
+                // Add a quantity selector
+                const quantitySelector = document.createElement('input');
+                quantitySelector.type = 'number';
+                quantitySelector.value = 0;
+                quantitySelector.min = 1;
+                quantitySelector.className = 'quantity-selector';
+                buttonDiv.appendChild(quantitySelector);
+
 
                 animationWrap.appendChild(itemDiv);
             });

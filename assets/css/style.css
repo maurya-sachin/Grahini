@@ -210,7 +210,7 @@ video#bgVideo {
     top: 0;
     z-index: 5;
     width: 100%;
-    column-gap: 33vw;
+    column-gap: 31vw;
     opacity: 0;
     backdrop-filter: blur(25px);
 }
@@ -264,6 +264,61 @@ video#bgVideo {
     align-items: center;
     justify-content: start;
     column-gap: 1vw;
+}
+
+.cart-icon-container {
+    position: relative;
+    margin-left: auto;
+}
+
+
+.control .menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control .menu .cart-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    color: white;
+    padding: 0.2em 0.5em;
+    border-radius: 50%;
+}
+
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    font-family: var(--text);
+}
+
+.cart-modal .modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 5px;
+}
+
+.cart-modal .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.cart-modal.active {
+    display: block;
 }
 
 #userBox {
@@ -628,7 +683,56 @@ section.horizontal .item:before {
     content: '';
 }
 
+section.horizontal .item .priceDiv {
+    font-family: var(--text);
+    font-size: 20px;
+    font-weight: 900;
+}
 
+section.horizontal .item .buttonDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+
+/* Add these styles for buttons and input */
+section.horizontal .item button {
+    display: block;
+    padding: 12px 24px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 25px;
+}
+
+section.horizontal .item button:hover {
+    background-color: white;
+    color: #000;
+}
+
+section.horizontal .item button:nth-child(2) {
+    display: none;
+    /* Initially hide the "Remove from Cart" button */
+}
+
+section.horizontal .item input {
+    display: block;
+    padding: 12px 24px;
+    background-color: black;
+    color: white;
+    border: none;
+    transition: background-color 0.3s;
+    border-radius: 25px;
+    width: 35%;
+}
+
+section.horizontal .item input:hover {
+    background-color: white;
+    color: #000;
+}
 
 
 section.horizontal .animation-wrap.to-right {
