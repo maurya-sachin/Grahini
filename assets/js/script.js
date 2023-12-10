@@ -231,6 +231,19 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
+  // Function to open cart modal
+  function openCartModal() {
+    document.getElementById('cartModal').classList.add('active');
+  }
+
+  // Function to close cart modal
+  function closeCartModal() {
+    document.getElementById('cartModal').classList.remove('active');
+  }
+
+  document.querySelector(".cart-icon-container").addEventListener("click", openCartModal);
+  document.querySelector(".modal-close").addEventListener("click", closeCartModal);
+
   function openPopup() {
     let signInPopup = document.getElementById("signInPopup");
     signInPopup.style.display = "flex";
