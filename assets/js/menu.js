@@ -97,6 +97,7 @@ function processData(menuData) {
                 quantitySelector.value = 0;
                 quantitySelector.min = 1;
                 quantitySelector.className = 'quantity-selector';
+                quantitySelector.style.display = 'none';
                 buttonDiv.appendChild(quantitySelector);
 
 
