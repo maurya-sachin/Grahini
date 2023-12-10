@@ -571,6 +571,12 @@ z" />
 		</a>
 
 		<div class="control">
+			<!--   Container for the cart icon with a badge -->
+			<div class="cart-icon-container">
+				<button class="menu"><img src="./assets/images/cart.png" style="width: 45px;" alt="">
+					<span id="cartBadge" class="cart-badge">0</span>
+				</button>
+			</div>
 			<div id="userBox">
 				<div class="profilePic">
 					<img src="./assets/images/user.png" id="userImage" alt="admin">
@@ -583,6 +589,16 @@ z" />
 			<div class="button">
 				<button class="login-button">Login/Sign Up</button>
 			</div>
+		</div>
+	</div>
+	<!-- Modal for the cart -->
+	<div class="cart-modal" id="cartModal">
+		<div class="modal-content">
+			<span class="modal-close">&times;</span>
+			<h2>Shopping Cart</h2>
+			<ul id="cartItemsList"></ul>
+			<p id="cartTotal">Total: $<span id="grandTotal">0.00</span></p>
+			<button onclick="proceedToCheckout()">Proceed to Checkout</button>
 		</div>
 	</div>
 
